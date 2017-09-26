@@ -3,3 +3,8 @@ C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce
 C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\obj\Release\ECommerce.dll
 C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\obj\Release\ECommerce.pdb
 C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\obj\Release\ECommerce.csprojResolveAssemblyReference.cache
+C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\bin\ECommerce.dll
+C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\bin\ECommerce.pdb
+C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\obj\Release\ECommerce.csprojResolveAssemblyReference.cache
+C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\obj\Release\ECommerce.dll
+C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\obj\Release\ECommerce.pdb
