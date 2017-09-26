@@ -114,6 +114,5 @@ namespace ECommerce.DAL
 
             cmd.ExecuteNonQuery();
         }
-
     }
 }

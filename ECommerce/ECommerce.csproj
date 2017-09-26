@@ -133,9 +133,9 @@
     <Content Include="js\main.js" />
     <Content Include="js\price-range.js" />
     <Content Include="Visao\Carrinho.aspx" />
-    <Content Include="Visao\ConexaoBD.aspx" />
-    <Content Include="Visao\ConexaoBDEdit.aspx" />
     <Content Include="Visao\Contato.aspx" />
+    <Content Include="Visao\CRUDCategoria.aspx" />
+    <Content Include="Visao\CRUDDepartamento.aspx" />
     <Content Include="Visao\Detalhes.aspx" />
     <Content Include="Visao\FinalizarCompra.aspx" />
     <Content Include="Visao\Index.aspx" />
@@ -168,26 +168,26 @@
     <Compile Include="Visao\Carrinho.aspx.designer.cs">
       <DependentUpon>Carrinho.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Visao\ConexaoBD.aspx.cs">
-      <DependentUpon>ConexaoBD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\ConexaoBD.aspx.designer.cs">
-      <DependentUpon>ConexaoBD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\ConexaoBDEdit.aspx.cs">
-      <DependentUpon>ConexaoBDEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\ConexaoBDEdit.aspx.designer.cs">
-      <DependentUpon>ConexaoBDEdit.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Visao\Contato.aspx.cs">
       <DependentUpon>Contato.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Visao\Contato.aspx.designer.cs">
       <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\CRUDCategoria.aspx.cs">
+      <DependentUpon>CRUDCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\CRUDCategoria.aspx.designer.cs">
+      <DependentUpon>CRUDCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\CRUDDepartamento.aspx.cs">
+      <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\CRUDDepartamento.aspx.designer.cs">
+      <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Detalhes.aspx.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
