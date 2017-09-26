@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AD39799-5679-4F5E-8660-40C67D774809}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECommerce</RootNamespace>
+    <AssemblyName>ECommerce</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\css\animate.css" />
+    <Content Include="App_Themes\css\font-awesome.min.css" />
+    <Content Include="App_Themes\css\main.css" />
+    <Content Include="App_Themes\css\prettyPhoto.css" />
+    <Content Include="App_Themes\css\price-range.css" />
+    <Content Include="App_Themes\css\responsive.css" />
+    <Content Include="Fontes\fontawesome-webfont.svg" />
+    <Content Include="Fontes\glyphicons-halflings-regular.svg" />
+    <Content Include="Imagens\404\404.png" />
+    <Content Include="Imagens\blog\blog-one.jpg" />
+    <Content Include="Imagens\blog\blog-three.jpg" />
+    <Content Include="Imagens\blog\blog-two.jpg" />
+    <Content Include="Imagens\blog\man-four.jpg" />
+    <Content Include="Imagens\blog\man-one.jpg" />
+    <Content Include="Imagens\blog\man-three.jpg" />
+    <Content Include="Imagens\blog\man-two.jpg" />
+    <Content Include="Imagens\blog\socials.png" />
+    <Content Include="Imagens\cart\one.png" />
+    <Content Include="Imagens\cart\three.png" />
+    <Content Include="Imagens\cart\two.png" />
+    <Content Include="Imagens\home\bg_border.png" />
+    <Content Include="Imagens\home\gallery1.jpg" />
+    <Content Include="Imagens\home\gallery2.jpg" />
+    <Content Include="Imagens\home\gallery3.jpg" />
+    <Content Include="Imagens\home\gallery4.jpg" />
+    <Content Include="Imagens\home\girl1.jpg" />
+    <Content Include="Imagens\home\girl2.jpg" />
+    <Content Include="Imagens\home\girl3.jpg" />
+    <Content Include="Imagens\home\iframe1.png" />
+    <Content Include="Imagens\home\iframe2.png" />
+    <Content Include="Imagens\home\iframe3.png" />
+    <Content Include="Imagens\home\iframe4.png" />
+    <Content Include="Imagens\home\logo.png" />
+    <Content Include="Imagens\home\map.png" />
+    <Content Include="Imagens\home\new.png" />
+    <Content Include="Imagens\home\partner1.png" />
+    <Content Include="Imagens\home\partner2.png" />
+    <Content Include="Imagens\home\partner3.png" />
+    <Content Include="Imagens\home\partner4.png" />
+    <Content Include="Imagens\home\pricing.png" />
+    <Content Include="Imagens\home\product1.jpg" />
+    <Content Include="Imagens\home\product2.jpg" />
+    <Content Include="Imagens\home\product3.jpg" />
+    <Content Include="Imagens\home\product4.jpg" />
+    <Content Include="Imagens\home\product5.jpg" />
+    <Content Include="Imagens\home\product6.jpg" />
+    <Content Include="Imagens\home\recommend1.jpg" />
+    <Content Include="Imagens\home\recommend2.jpg" />
+    <Content Include="Imagens\home\recommend3.jpg" />
+    <Content Include="Imagens\home\sale.png" />
+    <Content Include="Imagens\home\searchicon.png" />
+    <Content Include="Imagens\home\shipping.jpg" />
+    <Content Include="Imagens\product-details\1.jpg" />
+    <Content Include="Imagens\product-details\new.jpg" />
+    <Content Include="Imagens\product-details\rating.png" />
+    <Content Include="Imagens\product-details\share.png" />
+    <Content Include="Imagens\product-details\similar1.jpg" />
+    <Content Include="Imagens\product-details\similar2.jpg" />
+    <Content Include="Imagens\product-details\similar3.jpg" />
+    <Content Include="Imagens\shop\advertisement.jpg" />
+    <Content Include="Imagens\shop\product10.jpg" />
+    <Content Include="Imagens\shop\product11.jpg" />
+    <Content Include="Imagens\shop\product12.jpg" />
+    <Content Include="Imagens\shop\product7.jpg" />
+    <Content Include="Imagens\shop\product8.jpg" />
+    <Content Include="Imagens\shop\product9.jpg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\contact.js" />
+    <Content Include="js\gmaps.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\jquery.scrollUp.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\price-range.js" />
+    <Content Include="Visao\Carrinho.aspx" />
+    <Content Include="Visao\ConexaoBD.aspx" />
+    <Content Include="Visao\ConexaoBDEdit.aspx" />
+    <Content Include="Visao\Contato.aspx" />
+    <Content Include="Visao\Detalhes.aspx" />
+    <Content Include="Visao\FinalizarCompra.aspx" />
+    <Content Include="Visao\Index.aspx" />
+    <Content Include="Visao\Login.aspx" />
+    <Content Include="Visao\Vitrine.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\DALAvaliacaoProduto.cs" />
+    <Compile Include="DAL\DALCategoria.cs" />
+    <Compile Include="DAL\DALCompra.cs" />
+    <Compile Include="DAL\DALDepartamento.cs" />
+    <Compile Include="DAL\DALImagem.cs" />
+    <Compile Include="DAL\DALItensCompra.cs" />
+    <Compile Include="DAL\DALProduto.cs" />
+    <Compile Include="DAL\DALUsuario.cs" />
+    <Compile Include="Modelo\AvaliacaoProduto.cs" />
+    <Compile Include="Modelo\Categoria.cs" />
+    <Compile Include="Modelo\Compra.cs" />
+    <Compile Include="Modelo\Departamento.cs" />
+    <Compile Include="Modelo\Imagem.cs" />
+    <Compile Include="Modelo\ItensCompra.cs" />
+    <Compile Include="Modelo\Produto.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visao\Carrinho.aspx.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Carrinho.aspx.designer.cs">
+      <DependentUpon>Carrinho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\ConexaoBD.aspx.cs">
+      <DependentUpon>ConexaoBD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\ConexaoBD.aspx.designer.cs">
+      <DependentUpon>ConexaoBD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\ConexaoBDEdit.aspx.cs">
+      <DependentUpon>ConexaoBDEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\ConexaoBDEdit.aspx.designer.cs">
+      <DependentUpon>ConexaoBDEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Contato.aspx.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Contato.aspx.designer.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Detalhes.aspx.cs">
+      <DependentUpon>Detalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Detalhes.aspx.designer.cs">
+      <DependentUpon>Detalhes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FinalizarCompra.aspx.cs">
+      <DependentUpon>FinalizarCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\FinalizarCompra.aspx.designer.cs">
+      <DependentUpon>FinalizarCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Vitrine.aspx.cs">
+      <DependentUpon>Vitrine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Vitrine.aspx.designer.cs">
+      <DependentUpon>Vitrine.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Visao\MasterPage.Master" />
+    <Content Include="App_Themes\css\bootstrap.min.css" />
+    <Content Include="Fontes\fontawesome-webfont.woff" />
+    <Content Include="Fontes\FontAwesome.otf" />
+    <Content Include="Fontes\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\carlosprojetointegrador - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\carlosprojetointegrador - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62554</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64769/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

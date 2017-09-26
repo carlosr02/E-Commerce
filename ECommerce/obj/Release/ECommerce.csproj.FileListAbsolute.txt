@@ -1,0 +1,5 @@
+C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\bin\ECommerce.dll
+C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\bin\ECommerce.pdb
+C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\obj\Release\ECommerce.dll
+C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\obj\Release\ECommerce.pdb
+C:\Users\Carlos Romero\Documents\Visual Studio 2012\Projects\ECommerce\ECommerce\obj\Release\ECommerce.csprojResolveAssemblyReference.cache
