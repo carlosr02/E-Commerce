@@ -127,13 +127,14 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, categoria_id = @categoria_id WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque, categoria_id = @categoria_id WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.Parameters.AddWithValue("@nome", obj.Nome);
             cmd.Parameters.AddWithValue("@preco", obj.Preco);
             cmd.Parameters.AddWithValue("@marca", obj.Marca);
             cmd.Parameters.AddWithValue("@qntEmEstoque", obj.QntEmEstoque);
             cmd.Parameters.AddWithValue("@descricao", obj.Descricao);
+            cmd.Parameters.AddWithValue("@emDestaque", obj.EmDestaque);
             cmd.Parameters.AddWithValue("@categoria_id", obj.Categoria_id);
 
             cmd.ExecuteNonQuery();
