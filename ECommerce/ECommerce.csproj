@@ -136,6 +136,7 @@
     <Content Include="Visao\Contato.aspx" />
     <Content Include="Visao\CRUDCategoria.aspx" />
     <Content Include="Visao\CRUDDepartamento.aspx" />
+    <Content Include="Visao\CRUDProduto.aspx" />
     <Content Include="Visao\Detalhes.aspx" />
     <Content Include="Visao\FinalizarCompra.aspx" />
     <Content Include="Visao\Index.aspx" />
@@ -188,6 +189,13 @@
     </Compile>
     <Compile Include="Visao\CRUDDepartamento.aspx.designer.cs">
       <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\CRUDProduto.aspx.cs">
+      <DependentUpon>CRUDProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\CRUDProduto.aspx.designer.cs">
+      <DependentUpon>CRUDProduto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Detalhes.aspx.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>

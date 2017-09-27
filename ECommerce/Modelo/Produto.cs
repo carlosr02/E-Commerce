@@ -34,16 +34,16 @@ namespace ECommerce.Modelo
             get { return marca; }
             set { marca = value; }
         }
-        private int qntEmEstoque;
+        private Nullable<int> qntEmEstoque;
 
-        public int QntEmEstoque
+        public Nullable<int> QntEmEstoque
         {
             get { return qntEmEstoque; }
             set { qntEmEstoque = value; }
         }
-        private double mediaAvaliacoes;
+        private Nullable<double> mediaAvaliacoes;
 
-        public double MediaAvaliacoes
+        public Nullable<double> MediaAvaliacoes
         {
             get { return mediaAvaliacoes; }
             set { mediaAvaliacoes = value; }
@@ -70,7 +70,7 @@ namespace ECommerce.Modelo
             set { categoria_id = value; }
         }
 
-        public Produto(int id, string nome, double preco, string marca, int qntEmEstoque, double mediaAvaliacoes, string descricao, bool emDestaque, int categoria_id)
+        public Produto(int id, string nome, double preco, string marca, Nullable<int> qntEmEstoque, Nullable<double> mediaAvaliacoes, string descricao, bool emDestaque, int categoria_id)
         {
             this.id = id;
             this.nome = nome;
