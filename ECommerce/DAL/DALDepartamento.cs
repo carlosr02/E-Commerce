@@ -48,7 +48,7 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Departamento> Select(string id)
+        public List<Modelo.Departamento> Select(Modelo.Departamento obj)
         {
 
             Modelo.Departamento aDepartamento;
@@ -57,8 +57,8 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Departamento Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select * from Departamento where id = @id";
+            cmd.Parameters.AddWithValue("@id", obj.Id);
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)

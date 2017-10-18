@@ -49,7 +49,38 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Categoria> Select(string id)
+        public List<Modelo.Categoria> SelectAllByDepartamento(int departamento_id)
+        {
+            Modelo.Categoria aCategoria;
+            List<Modelo.Categoria> aListCategoria = new List<Modelo.Categoria>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Categoria where departamento_id = @departamento_id";
+            cmd.Parameters.AddWithValue("@departamento_id", departamento_id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aCategoria = new Modelo.Categoria(
+                        Convert.ToInt32(dr[0]),
+                        dr[1] as string,
+                        Convert.ToInt32(dr[2])
+                        );
+                    aListCategoria.Add(aCategoria);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return aListCategoria;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Categoria> Select(Modelo.Categoria obj)
         {
 
             Modelo.Categoria aCategoria;
@@ -58,8 +89,8 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Categoria Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select * from Categoria where id = @id";
+            cmd.Parameters.AddWithValue("@id", obj.Id);
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -111,10 +142,9 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Categoria SET descricao = @descricao, departamento_id = @departamento_id WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Categoria SET descricao = @descricao WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.Parameters.AddWithValue("@descricao", obj.Descricao);
-            cmd.Parameters.AddWithValue("@departamento_id", obj.Departamento_id);
 
             cmd.ExecuteNonQuery();
         }

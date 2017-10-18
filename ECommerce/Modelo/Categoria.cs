@@ -25,7 +25,6 @@ namespace ECommerce.Modelo
         public int Departamento_id
         {
             get { return departamento_id; }
-            set { departamento_id = value; }
         }
 
         public Categoria(int id, string descricao, int departamento_id)

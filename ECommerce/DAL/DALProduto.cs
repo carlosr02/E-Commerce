@@ -23,13 +23,13 @@ namespace ECommerce.DAL
         {
             Modelo.Produto aProduto;
             List<Modelo.Produto> aListProduto = new List<Modelo.Produto>();
-            
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from Produto";
-            
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -55,17 +55,17 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Produto> Select(string id)
+        public List<Modelo.Produto> SelectAllByCategoria(int categoria_id)
         {
-
             Modelo.Produto aProduto;
             List<Modelo.Produto> aListProduto = new List<Modelo.Produto>();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
+
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Produto Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select * from Produto where categoria_id = @categoria_id";
+            cmd.Parameters.AddWithValue("@categoria_id", categoria_id);
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -88,8 +88,69 @@ namespace ECommerce.DAL
             }
             dr.Close();
             conn.Close();
-
             return aListProduto;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Produto> SelectAllByDepartamento(Modelo.Departamento obj)
+        {
+            List<Modelo.Produto> aListProduto = new List<Modelo.Produto>();
+
+            List<Modelo.Categoria> aListCategoria = new List<Modelo.Categoria>();
+
+            DALCategoria DALCategoria = new DAL.DALCategoria();
+            aListCategoria = DALCategoria.SelectAllByDepartamento(obj.Id);
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            foreach (Modelo.Categoria Categoria in aListCategoria)
+            {
+                List<Modelo.Produto> dr = SelectAllByCategoria(Categoria.Id);
+
+                if (dr.Count != 0)
+                {
+                    foreach (Modelo.Produto Produto in dr)
+                    {
+                        aListProduto.Add(Produto);
+                    }
+                }
+            }
+
+            conn.Close();
+            return aListProduto;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Produto Select(int id)
+        {
+            Modelo.Produto aProduto;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Produto Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            aProduto = new Modelo.Produto(
+                        Convert.ToInt32(dr[0]),
+                        dr[1] as string,
+                        Convert.ToDouble(dr[2]),
+                        dr[3] as string,
+                        dr[4] as Nullable<int>,
+                        dr[5] as Nullable<double>,
+                        dr[6] as string,
+                        Convert.ToBoolean(dr[7]),
+                        Convert.ToInt32(dr[8])
+                        );
+
+            dr.Close();
+            conn.Close();
+
+            return aProduto;
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -127,7 +188,7 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque, categoria_id = @categoria_id WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.Parameters.AddWithValue("@nome", obj.Nome);
             cmd.Parameters.AddWithValue("@preco", obj.Preco);
@@ -135,7 +196,6 @@ namespace ECommerce.DAL
             cmd.Parameters.AddWithValue("@qntEmEstoque", obj.QntEmEstoque);
             cmd.Parameters.AddWithValue("@descricao", obj.Descricao);
             cmd.Parameters.AddWithValue("@emDestaque", obj.EmDestaque);
-            cmd.Parameters.AddWithValue("@categoria_id", obj.Categoria_id);
 
             cmd.ExecuteNonQuery();
         }

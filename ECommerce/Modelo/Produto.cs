@@ -46,7 +46,6 @@ namespace ECommerce.Modelo
         public Nullable<double> MediaAvaliacoes
         {
             get { return mediaAvaliacoes; }
-            set { mediaAvaliacoes = value; }
         }
         private string descricao;
 
@@ -67,7 +66,6 @@ namespace ECommerce.Modelo
         public int Categoria_id
         {
             get { return categoria_id; }
-            set { categoria_id = value; }
         }
 
         public Produto(int id, string nome, double preco, string marca, Nullable<int> qntEmEstoque, Nullable<double> mediaAvaliacoes, string descricao, bool emDestaque, int categoria_id)

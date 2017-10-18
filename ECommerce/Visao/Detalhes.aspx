@@ -207,11 +207,11 @@
                             <div class="product-information">
                                 <!--/product-information-->
                                 <img src="../Imagens/product-details/new.jpg" class="newarrival" alt="" />
-                                <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                                <p>Web ID: 1089772</p>
+                                <h2><asp:Label ID="LabelNome" runat="server"></asp:Label></h2>
+                                <p><asp:Label ID="LabelID" runat="server" Text="Web ID: "></asp:Label></p>
                                 <img src="../Imagens/product-details/rating.png" alt="" />
                                 <span>
-                                    <span>US $59</span>
+                                    <asp:Label ID="LabelValor" runat="server" Text="R$"></asp:Label>
                                     <label>Quantity:</label>
                                     <input type="text" value="3" />
                                     <button type="button" class="btn btn-fefault cart">
@@ -221,7 +221,7 @@
                                 </span>
                                 <p><b>Availability:</b> In Stock</p>
                                 <p><b>Condition:</b> New</p>
-                                <p><b>Brand:</b> E-SHOPPER</p>
+                                <p><b>Brand:</b> <asp:Label ID="LabelMarca" runat="server"></asp:Label></p>
                                 <a href="">
                                     <img src="../Imagens/product-details/share.png" class="share img-responsive" alt="" /></a>
                             </div>

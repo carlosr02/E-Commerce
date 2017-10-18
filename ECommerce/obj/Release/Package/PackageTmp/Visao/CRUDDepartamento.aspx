@@ -18,9 +18,10 @@
         </asp:Panel>
         <br />
         <asp:Panel ID="Panel2" runat="server">
+            Departamentos<br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating" DataKeyNames="Id">
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="Id" SortExpression="Id" HeaderText="Id" ReadOnly="True" Visible="False" />
                     <asp:BoundField DataField="Descricao" HeaderText="Descricao" SortExpression="Descricao" />
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Columns>

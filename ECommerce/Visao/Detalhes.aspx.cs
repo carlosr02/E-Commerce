@@ -11,7 +11,14 @@ namespace ECommerce.Visao
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DAL.DALProduto DALProduto = new DAL.DALProduto();
+            int id = Convert.ToInt32(Request.QueryString["id"]);
+            Modelo.Produto Produto = DALProduto.Select(id);
 
+            LabelID.Text += Produto.Id.ToString();
+            LabelMarca.Text = Produto.Marca;
+            LabelNome.Text = Produto.Nome;
+            LabelValor.Text += Produto.Preco.ToString();
         }
     }
 }
