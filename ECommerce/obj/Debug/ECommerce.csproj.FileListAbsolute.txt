@@ -17,3 +17,8 @@ C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\bin\ECommerce.dl
 C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\bin\ECommerce.pdb
 C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\obj\Debug\ECommerce.dll
 C:\Users\Carlos Romero\Documents\IFRN 2017\E-Commerce\ECommerce\obj\Debug\ECommerce.pdb
+C:\Users\20141011110255.IFRN.000\Downloads\E-Commerce\ECommerce\bin\ECommerce.dll
+C:\Users\20141011110255.IFRN.000\Downloads\E-Commerce\ECommerce\bin\ECommerce.pdb
+C:\Users\20141011110255.IFRN.000\Downloads\E-Commerce\ECommerce\obj\Debug\ECommerce.csprojResolveAssemblyReference.cache
+C:\Users\20141011110255.IFRN.000\Downloads\E-Commerce\ECommerce\obj\Debug\ECommerce.dll
+C:\Users\20141011110255.IFRN.000\Downloads\E-Commerce\ECommerce\obj\Debug\ECommerce.pdb
