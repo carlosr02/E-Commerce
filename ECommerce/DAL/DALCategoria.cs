@@ -49,6 +49,36 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Categoria> SelectAllDepDescr()
+        {
+            Modelo.Categoria aCategoria;
+            List<Modelo.Categoria> aListCategoria = new List<Modelo.Categoria>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select cat.id, cat.descricao, dep.descricao from Categoria cat inner join Departamento dep on dep.id = cat.departamento_id";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aCategoria = new Modelo.Categoria(
+                        Convert.ToInt32(dr[0]),
+                        dr[1] as string,
+                        dr[2] as string
+                        );
+                    aListCategoria.Add(aCategoria);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return aListCategoria;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Categoria> SelectAllByDepartamento(int departamento_id)
         {
             Modelo.Categoria aCategoria;

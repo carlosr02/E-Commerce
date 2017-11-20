@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ECommerce.Visao
 {
-    public partial class CRUDCategoria : System.Web.UI.Page
+    public partial class CRUD1 : System.Web.UI.Page
     {
         DAL.DALCategoria DALCategoria = new DAL.DALCategoria();
         Modelo.Categoria Categoria;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

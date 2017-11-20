@@ -27,11 +27,25 @@ namespace ECommerce.Modelo
             get { return departamento_id; }
         }
 
+        private string departamento;
+
+        public string Departamento
+        {
+            get { return departamento; }
+        }
+
         public Categoria(int id, string descricao, int departamento_id)
         {
             this.id = id;
             this.descricao = descricao;
             this.departamento_id = departamento_id;
+        }
+
+        public Categoria(int id, string descricao, string departamento)
+        {
+            this.id = id;
+            this.descricao = descricao;
+            this.departamento = departamento;
         }
     }
 }
