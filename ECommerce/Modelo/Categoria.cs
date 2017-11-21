@@ -41,10 +41,11 @@ namespace ECommerce.Modelo
             this.departamento_id = departamento_id;
         }
 
-        public Categoria(int id, string descricao, string departamento)
+        public Categoria(int id, string descricao, int departamento_id, string departamento)
         {
             this.id = id;
             this.descricao = descricao;
+            this.departamento_id = departamento_id;
             this.departamento = departamento;
         }
     }

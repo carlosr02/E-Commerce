@@ -1,4 +1,4 @@
-﻿    <%@ Page Title="Vitrine | ECommerce" Language="C#" MasterPageFile="~/Visao/MasterPage.Master" AutoEventWireup="true" CodeBehind="Vitrine.aspx.cs" Inherits="ECommerce.Visao.shop" Theme="css" %>
+﻿    <%@ Page Title="Vitrine | ECommerce" Language="C#" MasterPageFile="~/Visao/PublicMasterPage.Master" AutoEventWireup="true" CodeBehind="Vitrine.aspx.cs" Inherits="ECommerce.Visao.shop" Theme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

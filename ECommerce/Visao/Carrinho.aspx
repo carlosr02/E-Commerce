@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Carrinho | ECommerce" Language="C#" MasterPageFile="~/Visao/MasterPage.Master" AutoEventWireup="true" CodeBehind="Carrinho.aspx.cs" Inherits="ECommerce.Visao.Carrinho" Theme="css" %>
+﻿<%@ Page Title="Carrinho | ECommerce" Language="C#" MasterPageFile="~/Visao/PublicMasterPage.Master" AutoEventWireup="true" CodeBehind="Carrinho.aspx.cs" Inherits="ECommerce.Visao.Carrinho" Theme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

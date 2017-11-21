@@ -38,6 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -48,6 +56,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -132,19 +144,41 @@
     <Content Include="js\jquery.scrollUp.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\price-range.js" />
+    <Content Include="Visao\Adm\CRUDProduto.aspx" />
     <Content Include="Visao\Carrinho.aspx" />
-    <Content Include="Visao\Contato.aspx" />
-    <Content Include="Visao\CRUDCategoria.aspx" />
-    <Content Include="Visao\CRUDDepartamento.aspx" />
-    <Content Include="Visao\CRUDProduto.aspx" />
+    <Content Include="Visao\Adm\CRUDCategoria.aspx" />
+    <Content Include="Visao\Adm\CRUDDepartamento.aspx" />
     <Content Include="Visao\Detalhes.aspx" />
-    <Content Include="Visao\FinalizarCompra.aspx" />
+    <Content Include="Visao\Aut\FinalizarCompra.aspx" />
     <Content Include="Visao\Index.aspx" />
     <Content Include="Visao\Login.aspx" />
     <Content Include="Visao\Vitrine.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Visao\Adm\AdmMasterPage.Master.cs">
+      <DependentUpon>AdmMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\AdmMasterPage.Master.designer.cs">
+      <DependentUpon>AdmMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto.aspx.cs">
+      <DependentUpon>CRUDProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto.aspx.designer.cs">
+      <DependentUpon>CRUDProduto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Aut\AutMasterPage.Master.cs">
+      <DependentUpon>AutMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Aut\AutMasterPage.Master.designer.cs">
+      <DependentUpon>AutMasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALAvaliacaoProduto.cs" />
     <Compile Include="DAL\DALCategoria.cs" />
     <Compile Include="DAL\DALCompra.cs" />
@@ -169,33 +203,19 @@
     <Compile Include="Visao\Carrinho.aspx.designer.cs">
       <DependentUpon>Carrinho.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Visao\Contato.aspx.cs">
-      <DependentUpon>Contato.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\Contato.aspx.designer.cs">
-      <DependentUpon>Contato.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\CRUDCategoria.aspx.cs">
+    <Compile Include="Visao\Adm\CRUDCategoria.aspx.cs">
       <DependentUpon>CRUDCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Visao\CRUDCategoria.aspx.designer.cs">
+    <Compile Include="Visao\Adm\CRUDCategoria.aspx.designer.cs">
       <DependentUpon>CRUDCategoria.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Visao\CRUDDepartamento.aspx.cs">
+    <Compile Include="Visao\Adm\CRUDDepartamento.aspx.cs">
       <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Visao\CRUDDepartamento.aspx.designer.cs">
+    <Compile Include="Visao\Adm\CRUDDepartamento.aspx.designer.cs">
       <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\CRUDProduto.aspx.cs">
-      <DependentUpon>CRUDProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\CRUDProduto.aspx.designer.cs">
-      <DependentUpon>CRUDProduto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Detalhes.aspx.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
@@ -204,11 +224,11 @@
     <Compile Include="Visao\Detalhes.aspx.designer.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Visao\FinalizarCompra.aspx.cs">
+    <Compile Include="Visao\Aut\FinalizarCompra.aspx.cs">
       <DependentUpon>FinalizarCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Visao\FinalizarCompra.aspx.designer.cs">
+    <Compile Include="Visao\Aut\FinalizarCompra.aspx.designer.cs">
       <DependentUpon>FinalizarCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Index.aspx.cs">
@@ -225,12 +245,12 @@
     <Compile Include="Visao\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Visao\MasterPage.Master.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
+    <Compile Include="Visao\PublicMasterPage.Master.cs">
+      <DependentUpon>PublicMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Visao\MasterPage.Master.designer.cs">
-      <DependentUpon>MasterPage.Master</DependentUpon>
+    <Compile Include="Visao\PublicMasterPage.Master.designer.cs">
+      <DependentUpon>PublicMasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Visao\Vitrine.aspx.cs">
       <DependentUpon>Vitrine.aspx</DependentUpon>
@@ -241,13 +261,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Visao\MasterPage.Master" />
+    <Content Include="Visao\PublicMasterPage.Master" />
     <Content Include="App_Themes\css\bootstrap.min.css" />
     <Content Include="Fontes\fontawesome-webfont.woff" />
     <Content Include="Fontes\FontAwesome.otf" />
     <Content Include="Fontes\glyphicons-halflings-regular.woff" />
+    <Content Include="Visao\Adm\AdmMasterPage.Master" />
+    <Content Include="Visao\Aut\AutMasterPage.Master" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\carlosprojetointegrador - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\carlosprojetointegrador - Web Deploy.pubxml" />
+    <Content Include="Visao\Aut\Web.config" />
+    <Content Include="Visao\Adm\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

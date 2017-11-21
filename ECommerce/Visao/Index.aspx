@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home | ECommerce" Language="C#" MasterPageFile="~/Visao/MasterPage.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ECommerce.Visao.index" StylesheetTheme="css" %>
+﻿<%@ Page Title="Home | ECommerce" Language="C#" MasterPageFile="~/Visao/PublicMasterPage.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ECommerce.Visao.index" StylesheetTheme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

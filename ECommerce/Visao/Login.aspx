@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Login | ECommerce" Language="C#" MasterPageFile="~/Visao/MasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ECommerce.Visao.Login" Theme="css" %>
+﻿<%@ Page Title="Login | ECommerce" Language="C#" MasterPageFile="~/Visao/PublicMasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ECommerce.Visao.Login" Theme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -10,32 +10,28 @@
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="login-form">
                         <!--login form-->
-                        <h2>Login to your account</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name" />
-                            <input type="email" placeholder="Email Address" />
-                            <span>
-                                <input type="checkbox" class="checkbox" />
-                                Keep me signed in
-							</span>
-                            <button type="submit" class="btn btn-default">Login</button>
-                        </form>
+                        <h2>Entrar</h2>
+                        <asp:TextBox ID="login_email" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="login_senha" runat="server" placeholder="Senha" TextMode="Password"></asp:TextBox>
+                        <span>
+                            <asp:CheckBox ID="login_checkbox" runat="server" />
+                            Continuar contectado
+                        </span>
+                        <asp:Button ID="login" runat="server" Text="Entrar" CssClass="btn btn-default" OnClick="Login_OnClick" />
                     </div>
                     <!--/login form-->
                 </div>
                 <div class="col-sm-1">
-                    <h2 class="or">OR</h2>
+                    <h2 class="or">OU</h2>
                 </div>
                 <div class="col-sm-4">
                     <div class="signup-form">
                         <!--sign up form-->
-                        <h2>New User Signup!</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name" />
-                            <input type="email" placeholder="Email Address" />
-                            <input type="password" placeholder="Password" />
-                            <button type="submit" class="btn btn-default">Signup</button>
-                        </form>
+                        <h2>Cadastrar</h2>
+                        <asp:TextBox ID="cadastro_email" runat="server" TextMode="Email" placeholder="Email"></asp:TextBox>
+                        <asp:TextBox ID="cadastro_senha" runat="server" TextMode="Password" placeholder="Senha"></asp:TextBox>
+                        <asp:TextBox ID="cadastro_confirmar" runat="server" TextMode="Password" placeholder="Confirmar senha"></asp:TextBox>
+                        <asp:Button ID="cadastro" runat="server" Text="Cadastrar" CssClass="btn btn-default" OnClientClick="Cadastro_OnClick" />
                     </div>
                     <!--/sign up form-->
                 </div>

@@ -58,7 +58,7 @@ namespace ECommerce.DAL
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select cat.id, cat.descricao, dep.descricao from Categoria cat inner join Departamento dep on dep.id = cat.departamento_id";
+            cmd.CommandText = "select cat.id, cat.descricao, cat.departamento_id, dep.descricao from Categoria cat inner join Departamento dep on dep.id = cat.departamento_id";
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -68,7 +68,8 @@ namespace ECommerce.DAL
                     aCategoria = new Modelo.Categoria(
                         Convert.ToInt32(dr[0]),
                         dr[1] as string,
-                        dr[2] as string
+                        Convert.ToInt32(dr[2]),
+                        dr[3] as string
                         );
                     aListCategoria.Add(aCategoria);
                 }

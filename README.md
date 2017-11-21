@@ -13,3 +13,5 @@ Carlos Romero Bacurau de Brito (carlosr02), 20141011110255
   * Versão 6.0.9 Community
 * **Astah UML:** Modelagem com a Linguagem UML [(zip)](http://diatinf.ifrn.edu.br/prof/lib/exe/fetch.php?media=user:1577657:astah-community-6.9.0.zip)
   * Versão 6.9.0 Community
+* **GitHub:** Git for Windows [(zip)](https://github.com/git-for-windows/git/releases/download/v2.15.0.windows.1/PortableGit-2.15.0-32-bit.7z.exe) 
+  
