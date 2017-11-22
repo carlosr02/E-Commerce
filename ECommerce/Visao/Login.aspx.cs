@@ -6,9 +6,9 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ECommerce.Visao
+namespace ECommerce
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class log : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,13 +22,23 @@ namespace ECommerce.Visao
                 FormsAuthentication.SetAuthCookie(login_email.Text, login_checkbox.Checked);
                 Response.Redirect("Index.aspx");
             }
+
+            else login_erro.Text = "Email ou senha inválidos";
         }
 
         protected void Cadastro_OnClick(object sender, EventArgs e)
         {
-            Membership.CreateUser(cadastro_email.Text,cadastro_senha.Text);
-            FormsAuthentication.SetAuthCookie(cadastro_email.Text, true);
-            Response.Redirect("Index.aspx");
+            if (cadastro_senha.Text != cadastro_confirmar.Text) cadastro_erro.Text = "Senhas diferentes";
+            else
+            {
+                try
+                {
+                    Membership.CreateUser(cadastro_email.Text, cadastro_senha.Text);
+                    FormsAuthentication.SetAuthCookie(cadastro_email.Text, true);
+                    Response.Redirect("Index.aspx");
+                }
+                catch (Exception ex) { cadastro_erro.Text = ex.Message; }
+            }
         }
     }
 }

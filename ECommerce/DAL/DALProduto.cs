@@ -55,6 +55,79 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Produto> SelectBySearch(string search)
+        {
+            Modelo.Produto aProduto;
+            List<Modelo.Produto> aListProduto = new List<Modelo.Produto>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Produto where nome like '%' + @search + '%'";
+            cmd.Parameters.AddWithValue("@search", search);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aProduto = new Modelo.Produto(
+                        Convert.ToInt32(dr[0]),
+                        dr[1] as string,
+                        Convert.ToDouble(dr[2]),
+                        dr[3] as string,
+                        dr[4] as Nullable<int>,
+                        dr[5] as Nullable<double>,
+                        dr[6] as string,
+                        Convert.ToBoolean(dr[7]),
+                        Convert.ToInt32(dr[8])
+                        );
+                    aListProduto.Add(aProduto);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return aListProduto;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Produto> SelectAllDestaque()
+        {
+            Modelo.Produto aProduto;
+            List<Modelo.Produto> aListProduto = new List<Modelo.Produto>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Produto where emDestaque = 1";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aProduto = new Modelo.Produto(
+                        Convert.ToInt32(dr[0]),
+                        dr[1] as string,
+                        Convert.ToDouble(dr[2]),
+                        dr[3] as string,
+                        dr[4] as Nullable<int>,
+                        dr[5] as Nullable<double>,
+                        dr[6] as string,
+                        Convert.ToBoolean(dr[7]),
+                        Convert.ToInt32(dr[8])
+                        );
+                    aListProduto.Add(aProduto);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return aListProduto;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Produto> SelectAllByCategoria(int categoria_id)
         {
             Modelo.Produto aProduto;

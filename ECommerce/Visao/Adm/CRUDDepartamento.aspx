@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Visao/Adm/AdmMasterPage.Master" AutoEventWireup="true" CodeBehind="CRUDDepartamento.aspx.cs" Inherits="ECommerce.Visao.CRUD" Theme="css" %>
+﻿<%@ Page Title="Departamentos | ECommerce" Language="C#" MasterPageFile="~/Visao/Adm/AdmMasterPage.Master" AutoEventWireup="true" CodeBehind="CRUDDepartamento.aspx.cs" Inherits="ECommerce.Visao.CRUD" Theme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

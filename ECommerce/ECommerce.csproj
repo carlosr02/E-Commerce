@@ -144,6 +144,7 @@
     <Content Include="js\jquery.scrollUp.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\price-range.js" />
+    <Content Include="Visao\Login.aspx" />
     <Content Include="Visao\Adm\CRUDProduto.aspx" />
     <Content Include="Visao\Carrinho.aspx" />
     <Content Include="Visao\Adm\CRUDCategoria.aspx" />
@@ -151,13 +152,19 @@
     <Content Include="Visao\Detalhes.aspx" />
     <Content Include="Visao\Aut\FinalizarCompra.aspx" />
     <Content Include="Visao\Index.aspx" />
-    <Content Include="Visao\Login.aspx" />
     <Content Include="Visao\Vitrine.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Visao\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Visao\Adm\AdmMasterPage.Master.cs">
       <DependentUpon>AdmMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,13 +244,6 @@
     </Compile>
     <Compile Include="Visao\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\PublicMasterPage.Master.cs">
       <DependentUpon>PublicMasterPage.Master</DependentUpon>

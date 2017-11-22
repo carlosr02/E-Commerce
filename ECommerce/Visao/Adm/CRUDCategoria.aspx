@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Visao/Adm/AdmMasterPage.Master" AutoEventWireup="true" CodeBehind="CRUDCategoria.aspx.cs" Inherits="ECommerce.Visao.CRUD1" Theme="css" %>
+﻿<%@ Page Title="Categorias | ECommerce" Language="C#" MasterPageFile="~/Visao/Adm/AdmMasterPage.Master" AutoEventWireup="true" CodeBehind="CRUDCategoria.aspx.cs" Inherits="ECommerce.Visao.CRUD1" Theme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="contact-page" class="container">
         <div class="bg">
