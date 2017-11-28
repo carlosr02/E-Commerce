@@ -23,13 +23,13 @@ namespace ECommerce.DAL
         {
             Modelo.Departamento aDepartamento;
             List<Modelo.Departamento> aListDepartamento = new List<Modelo.Departamento>();
-            
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from Departamento";
-            
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -48,44 +48,36 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Departamento> Select(Modelo.Departamento obj)
+        public Modelo.Departamento Select(int id)
         {
-
             Modelo.Departamento aDepartamento;
-            List<Modelo.Departamento> aListDepartamento = new List<Modelo.Departamento>();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from Departamento where id = @id";
-            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    aDepartamento = new Modelo.Departamento(
+            dr.Read();
+            aDepartamento = new Modelo.Departamento(
                         Convert.ToInt32(dr[0]),
                         dr[1] as string
                         );
-                    aListDepartamento.Add(aDepartamento);
-                }
-            }
             dr.Close();
             conn.Close();
 
-            return aListDepartamento;
+            return aDepartamento;
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Departamento obj)
+        public void Delete(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("DELETE FROM Departamento WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
         }

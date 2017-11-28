@@ -28,7 +28,7 @@ namespace ECommerce.DAL
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Produto";
+            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id";
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -44,7 +44,10 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        Convert.ToInt32(dr[8]),
+                        dr[9] as string,
+                        Convert.ToInt32(dr[10]),
+                        dr[11] as string
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -202,7 +205,7 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Produto Where id = @id";
+            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id where p.id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -217,7 +220,10 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        Convert.ToInt32(dr[8]),
+                        dr[9] as string,
+                        Convert.ToInt32(dr[10]),
+                        dr[11] as string
                         );
 
             dr.Close();
@@ -227,13 +233,13 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Produto obj)
+        public void Delete(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("DELETE FROM Produto WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
         }
@@ -261,7 +267,7 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque, categoria_id = @categoria_id WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.Parameters.AddWithValue("@nome", obj.Nome);
             cmd.Parameters.AddWithValue("@preco", obj.Preco);
@@ -269,6 +275,7 @@ namespace ECommerce.DAL
             cmd.Parameters.AddWithValue("@qntEmEstoque", obj.QntEmEstoque);
             cmd.Parameters.AddWithValue("@descricao", obj.Descricao);
             cmd.Parameters.AddWithValue("@emDestaque", obj.EmDestaque);
+            cmd.Parameters.AddWithValue("@categoria_id", obj.Categoria_id);
 
             cmd.ExecuteNonQuery();
         }

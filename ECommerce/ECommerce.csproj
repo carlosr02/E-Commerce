@@ -144,11 +144,21 @@
     <Content Include="js\jquery.scrollUp.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\price-range.js" />
+    <Content Include="Visao\Adm\CRUDCategoria\Alterar.aspx" />
+    <Content Include="Visao\Adm\CRUDCategoria\Excluir.aspx" />
+    <Content Include="Visao\Adm\CRUDCategoria\Incluir.aspx" />
+    <Content Include="Visao\Adm\CRUDCategoria\Index.aspx" />
+    <Content Include="Visao\Adm\CRUDDepartamento\Alterar.aspx" />
+    <Content Include="Visao\Adm\CRUDDepartamento\Excluir.aspx" />
+    <Content Include="Visao\Adm\CRUDDepartamento\Incluir.aspx" />
+    <Content Include="Visao\Adm\CRUDDepartamento\Index.aspx" />
+    <Content Include="Visao\Adm\CRUDProduto\Alterar.aspx" />
+    <Content Include="Visao\Adm\CRUDProduto\Excluir.aspx" />
+    <Content Include="Visao\Adm\CRUDProduto\Incluir.aspx" />
+    <Content Include="Visao\Adm\CRUDProduto\Index.aspx" />
     <Content Include="Visao\Login.aspx" />
     <Content Include="Visao\Adm\CRUDProduto.aspx" />
     <Content Include="Visao\Carrinho.aspx" />
-    <Content Include="Visao\Adm\CRUDCategoria.aspx" />
-    <Content Include="Visao\Adm\CRUDDepartamento.aspx" />
     <Content Include="Visao\Detalhes.aspx" />
     <Content Include="Visao\Aut\FinalizarCompra.aspx" />
     <Content Include="Visao\Index.aspx" />
@@ -158,6 +168,90 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Visao\Adm\CRUDCategoria\Alterar.aspx.cs">
+      <DependentUpon>Alterar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Alterar.aspx.designer.cs">
+      <DependentUpon>Alterar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Excluir.aspx.cs">
+      <DependentUpon>Excluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Excluir.aspx.designer.cs">
+      <DependentUpon>Excluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Incluir.aspx.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Incluir.aspx.designer.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDCategoria\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Alterar.aspx.cs">
+      <DependentUpon>Alterar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Alterar.aspx.designer.cs">
+      <DependentUpon>Alterar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Excluir.aspx.cs">
+      <DependentUpon>Excluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Excluir.aspx.designer.cs">
+      <DependentUpon>Excluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Incluir.aspx.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Incluir.aspx.designer.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDDepartamento\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Alterar.aspx.cs">
+      <DependentUpon>Alterar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Alterar.aspx.designer.cs">
+      <DependentUpon>Alterar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Excluir.aspx.cs">
+      <DependentUpon>Excluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Excluir.aspx.designer.cs">
+      <DependentUpon>Excluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Incluir.aspx.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Incluir.aspx.designer.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDProduto\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Visao\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,20 +303,6 @@
     </Compile>
     <Compile Include="Visao\Carrinho.aspx.designer.cs">
       <DependentUpon>Carrinho.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\Adm\CRUDCategoria.aspx.cs">
-      <DependentUpon>CRUDCategoria.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\Adm\CRUDCategoria.aspx.designer.cs">
-      <DependentUpon>CRUDCategoria.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\Adm\CRUDDepartamento.aspx.cs">
-      <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\Adm\CRUDDepartamento.aspx.designer.cs">
-      <DependentUpon>CRUDDepartamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Detalhes.aspx.cs">
       <DependentUpon>Detalhes.aspx</DependentUpon>

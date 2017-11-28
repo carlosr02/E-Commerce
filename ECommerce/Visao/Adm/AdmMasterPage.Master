@@ -44,7 +44,7 @@
                 <!--header-bottom-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                     <span class="sr-only">Toggle navigation</span>
@@ -58,20 +58,12 @@
                                     <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Visao/Index.aspx">Home</asp:HyperLink></li>
                                     <li class="dropdown"><a href="#">Gerenciamento<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Visao/Adm/CRUDDepartamento.aspx">Departamentos</asp:HyperLink></li>
-                                            <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Visao/Adm/CRUDCategoria.aspx">Categorias</asp:HyperLink></li>
-                                            <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Visao/Adm/CRUDProduto.aspx">Produtos</asp:HyperLink></li>
+                                            <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Visao/Adm/CRUDDepartamento/Index.aspx">Departamentos</asp:HyperLink></li>
+                                            <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Visao/Adm/CRUDCategoria/Index.aspx">Categorias</asp:HyperLink></li>
+                                            <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Visao/Adm/CRUDProduto/Index.aspx">Produtos</asp:HyperLink></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="search_box pull-right">
-                                <asp:Panel ID="Panel1" runat="server" class="search_box" DefaultButton="Button1">
-                                <asp:TextBox ID="Busca" runat="server" placeholder="O que você está procurando?"></asp:TextBox>
-                                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" Style="display: none" />
-                            </asp:Panel>
                             </div>
                         </div>
                     </div>

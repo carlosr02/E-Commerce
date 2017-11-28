@@ -23,36 +23,6 @@ namespace ECommerce.DAL
         {
             Modelo.Categoria aCategoria;
             List<Modelo.Categoria> aListCategoria = new List<Modelo.Categoria>();
-            
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Categoria";
-            
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    aCategoria = new Modelo.Categoria(
-                        Convert.ToInt32(dr[0]),
-                        dr[1] as string,
-                        Convert.ToInt32(dr[2])
-                        );
-                    aListCategoria.Add(aCategoria);
-                }
-            }
-            dr.Close();
-            conn.Close();
-            return aListCategoria;
-        }
-
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Categoria> SelectAllDepDescr()
-        {
-            Modelo.Categoria aCategoria;
-            List<Modelo.Categoria> aListCategoria = new List<Modelo.Categoria>();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -89,7 +59,7 @@ namespace ECommerce.DAL
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Categoria where departamento_id = @departamento_id";
+            cmd.CommandText = "select cat.id, cat.descricao, cat.departamento_id, dep.descricao from Categoria cat inner join Departamento dep on dep.id = cat.departamento_id where cat.departamento_id = @departamento_id";
             cmd.Parameters.AddWithValue("@departamento_id", departamento_id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -100,7 +70,8 @@ namespace ECommerce.DAL
                     aCategoria = new Modelo.Categoria(
                         Convert.ToInt32(dr[0]),
                         dr[1] as string,
-                        Convert.ToInt32(dr[2])
+                        Convert.ToInt32(dr[2]),
+                        dr[3] as string
                         );
                     aListCategoria.Add(aCategoria);
                 }
@@ -111,45 +82,38 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Categoria> Select(Modelo.Categoria obj)
+        public Modelo.Categoria Select(int id)
         {
-
             Modelo.Categoria aCategoria;
-            List<Modelo.Categoria> aListCategoria = new List<Modelo.Categoria>();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Categoria where id = @id";
-            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.CommandText = "select cat.id, cat.descricao, cat.departamento_id, dep.descricao from Categoria cat inner join Departamento dep on dep.id = cat.departamento_id where cat.id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    aCategoria = new Modelo.Categoria(
+            dr.Read();
+            aCategoria = new Modelo.Categoria(
                         Convert.ToInt32(dr[0]),
                         dr[1] as string,
-                        Convert.ToInt32(dr[2])
+                        Convert.ToInt32(dr[2]),
+                        dr[3] as string
                         );
-                    aListCategoria.Add(aCategoria);
-                }
-            }
             dr.Close();
             conn.Close();
 
-            return aListCategoria;
+            return aCategoria;
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Categoria obj)
+        public void Delete(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("DELETE FROM Categoria WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
         }
@@ -173,9 +137,10 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Categoria SET descricao = @descricao WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Categoria SET descricao = @descricao, departamento_id = @departamento_id WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.Parameters.AddWithValue("@descricao", obj.Descricao);
+            cmd.Parameters.AddWithValue("@departamento_id", obj.Departamento_id);
 
             cmd.ExecuteNonQuery();
         }

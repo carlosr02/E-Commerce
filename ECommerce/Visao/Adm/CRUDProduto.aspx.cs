@@ -56,7 +56,7 @@ namespace ECommerce.Visao.Adm
             int id = Convert.ToInt32(GridView1.DataKeys[index].Value.ToString());
 
             Produto = new Modelo.Produto(id, "", 0, "", 0, 0, "", false, 0);
-            DALProduto.Delete(Produto);
+            // DALProduto.Delete(Produto);
 
             Response.Redirect(Request.RawUrl);
         }

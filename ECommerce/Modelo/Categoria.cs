@@ -25,6 +25,7 @@ namespace ECommerce.Modelo
         public int Departamento_id
         {
             get { return departamento_id; }
+            set { departamento_id = value; }
         }
 
         private string departamento;

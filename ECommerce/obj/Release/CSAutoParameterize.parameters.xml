@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="ecommerceConnectionString-Web.config Connection String" description="ecommerceConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=projeto-integrador.database.windows.net;Initial Catalog=ecommerce;User ID=carlosr02;Password=Senha123" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Carlos\ Romero\\Documents\\IFRN\ 2017\\E-Commerce\\ECommerce\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ecommerceConnectionString']/@connectionString" />
-  </parameter>
-</parameters>
