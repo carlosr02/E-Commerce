@@ -1,4 +1,4 @@
-﻿    <%@ Page Title="Vitrine | ECommerce" Language="C#" MasterPageFile="~/Visao/PublicMasterPage.Master" AutoEventWireup="true" CodeBehind="Vitrine.aspx.cs" Inherits="ECommerce.Visao.shop" Theme="css" %>
+﻿<%@ Page Title="Vitrine | ECommerce" Language="C#" MasterPageFile="~/Visao/PublicMasterPage.Master" AutoEventWireup="true" CodeBehind="Vitrine.aspx.cs" Inherits="ECommerce.Visao.shop" Theme="css" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -44,16 +44,6 @@
                         </div>
                         <!--/category-products-->
 
-                        <div class="price-range">
-                            <!--price-range-->
-                            <h2>Preço</h2>
-                            <div class="well text-center">
-                                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
-                                <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-                            </div>
-                        </div>
-                        <!--/price-range-->
-
                         <div class="shipping text-center">
                             <!--shipping-->
                             <img src="../Imagens/home/shipping.jpg" alt="" />
@@ -67,6 +57,13 @@
                     <div class="features_items">
                         <!--features_items-->
                         <h2 class="title text-center">Resultados</h2>
+                        <div id="order">
+                            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                                <asp:ListItem Value="0">Ordenar</asp:ListItem>
+                                <asp:ListItem Value="1">Menores Pre&#231;os</asp:ListItem>
+                                <asp:ListItem Value="2">Maiores Pre&#231;os</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
                         <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" ItemStyle-CssClass="col-sm-4">
                             <ItemTemplate>
                                 <div class="product-image-wrapper">
@@ -89,14 +86,7 @@
                             <SelectParameters>
                                 <asp:QueryStringParameter QueryStringField="busca" Name="search" Type="String"></asp:QueryStringParameter>
                             </SelectParameters>
-                        </asp:ObjectDataSource>                    
-
-                        <ul class="pagination">
-                            <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">&raquo;</a></li>
-                        </ul>
+                        </asp:ObjectDataSource>
                     </div>
                     <!--features_items-->
                 </div>

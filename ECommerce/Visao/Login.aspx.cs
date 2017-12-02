@@ -37,7 +37,14 @@ namespace ECommerce
                     FormsAuthentication.SetAuthCookie(cadastro_email.Text, true);
                     Response.Redirect("Index.aspx");
                 }
-                catch (Exception ex) { cadastro_erro.Text = ex.Message; }
+                catch (MembershipCreateUserException ex)
+                {
+                    MembershipCreateStatus status = ex.StatusCode;
+                    if (status == MembershipCreateStatus.DuplicateUserName)
+                        cadastro_erro.Text = "O email já está em uso";
+                    if (status == MembershipCreateStatus.InvalidPassword)
+                        cadastro_erro.Text = "A senha deve conter no mínimo 5 caracteres";
+                }
             }
         }
     }

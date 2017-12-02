@@ -833,6 +833,20 @@ h2.title:before{
 	overflow:hidden;
 }
 
+.features_items select {
+    float:right;
+    margin-bottom:5px;
+    font-size:15px;
+}
+
+.features_items table {
+    float:left;
+}
+
+#order {
+    display:flex;
+    float:right;
+}
 
 h2.title {
   color: #FE980F;
@@ -1219,7 +1233,7 @@ h2.title {
   overflow: hidden;
   padding-bottom: 60px;
   padding-left: 60px;
-  padding-top: 60px;
+  padding-top: 30px;
   position: relative;
 }
 
@@ -1761,7 +1775,6 @@ h2.title {
   border:0;
   color: #696763;
   padding: 5px;
-  width: 100%;
   border-radius: 0;
   resize: none
 }

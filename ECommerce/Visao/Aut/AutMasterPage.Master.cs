@@ -18,5 +18,10 @@ namespace ECommerce
         {
             Response.Redirect("Vitrine.aspx?busca=" + Busca.Text);
         }
+
+        protected void LoginStatus1_LoggedOut(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Visao/Index.aspx");
+        }
     }
 }

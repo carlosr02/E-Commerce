@@ -59,7 +59,6 @@
                         <div class="col-sm-5">
                             <div class="view-product">
                                 <img src="../Imagens/product-details/1.jpg" alt="" />
-                                <h3>ZOOM</h3>
                             </div>
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -105,7 +104,6 @@
                         <div class="col-sm-7">
                             <div class="product-information">
                                 <!--/product-information-->
-                                <img src="../Imagens/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2>
                                     <asp:Label ID="LabelNome" runat="server"></asp:Label></h2>
                                 <p>

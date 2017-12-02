@@ -32,7 +32,7 @@
                                     <li><a href=""><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href="../Carrinho.aspx"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
                                     <li><i class="fa fa-lock"></i>
-                                        &nbsp<asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Sair" LogoutPageUrl="~/Visao/Index.aspx" />
+                                        &nbsp<asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Sair" OnLoggedOut="LoginStatus1_LoggedOut" />
                                     </li>
                                 </ul>
                             </div>

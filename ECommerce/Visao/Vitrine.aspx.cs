@@ -24,7 +24,14 @@ namespace ECommerce.Visao
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownList1.SelectedValue == "0") { ObjectDataSource1.SelectMethod = "SelectBySearch"; }
+            else if (DropDownList1.SelectedValue == "1") { ObjectDataSource1.SelectMethod = "SelectBySearchOrdered"; }
+            else if (DropDownList1.SelectedValue == "2") { ObjectDataSource1.SelectMethod = "SelectBySearchOrderedDesc"; }
         }
     }
 }
