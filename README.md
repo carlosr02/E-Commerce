@@ -5,7 +5,6 @@ Carlos Romero Bacurau de Brito (carlosr02), 20141011110255
 
 * Escopo do projeto;
 * Prótipos de tela;
-* Diagrama Relacional.
 
 <h3>Softwares de apoio</h3>
 
