@@ -24,7 +24,7 @@ namespace ECommerce.Visao
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (DataList1.Items.Count == 0) Label1.Text = "Nenhum resultado encontrado";
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)

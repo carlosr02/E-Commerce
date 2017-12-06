@@ -152,12 +152,13 @@
     <Content Include="Visao\Adm\CRUDDepartamento\Excluir.aspx" />
     <Content Include="Visao\Adm\CRUDDepartamento\Incluir.aspx" />
     <Content Include="Visao\Adm\CRUDDepartamento\Index.aspx" />
+    <Content Include="Visao\Adm\CRUDImagem\Incluir.aspx" />
+    <Content Include="Visao\Adm\CRUDImagem\Index.aspx" />
     <Content Include="Visao\Adm\CRUDProduto\Alterar.aspx" />
     <Content Include="Visao\Adm\CRUDProduto\Excluir.aspx" />
     <Content Include="Visao\Adm\CRUDProduto\Incluir.aspx" />
     <Content Include="Visao\Adm\CRUDProduto\Index.aspx" />
     <Content Include="Visao\Login.aspx" />
-    <Content Include="Visao\Adm\CRUDProduto.aspx" />
     <Content Include="Visao\Carrinho.aspx" />
     <Content Include="Visao\Detalhes.aspx" />
     <Content Include="Visao\Aut\FinalizarCompra.aspx" />
@@ -224,6 +225,20 @@
     <Compile Include="Visao\Adm\CRUDDepartamento\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Visao\Adm\CRUDImagem\Incluir.aspx.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDImagem\Incluir.aspx.designer.cs">
+      <DependentUpon>Incluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDImagem\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDImagem\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Visao\Adm\CRUDProduto\Alterar.aspx.cs">
       <DependentUpon>Alterar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,13 +280,6 @@
     </Compile>
     <Compile Include="Visao\Adm\AdmMasterPage.Master.designer.cs">
       <DependentUpon>AdmMasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\Adm\CRUDProduto.aspx.cs">
-      <DependentUpon>CRUDProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Visao\Adm\CRUDProduto.aspx.designer.cs">
-      <DependentUpon>CRUDProduto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Aut\AutMasterPage.Master.cs">
       <DependentUpon>AutMasterPage.Master</DependentUpon>

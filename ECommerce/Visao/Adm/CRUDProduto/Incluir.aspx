@@ -7,6 +7,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Inclusão de Produto</h2>
+                    <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
                     <table>
                         <tr>
                             <td>

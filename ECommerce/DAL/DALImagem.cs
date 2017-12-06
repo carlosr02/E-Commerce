@@ -50,11 +50,9 @@ namespace ECommerce.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Imagem> Select(string id)
+        public Modelo.Imagem Select(int id)
         {
-
             Modelo.Imagem aImagem;
-            List<Modelo.Imagem> aListImagem = new List<Modelo.Imagem>();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -63,32 +61,26 @@ namespace ECommerce.DAL
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    aImagem = new Modelo.Imagem(
+            dr.Read();
+            aImagem = new Modelo.Imagem(
                         Convert.ToInt32(dr[0]),
                         dr[1] as string,
                         Convert.ToInt32(dr[2])
                         );
-                    aListImagem.Add(aImagem);
-                }
-            }
             dr.Close();
             conn.Close();
 
-            return aListImagem;
+            return aImagem;
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Imagem obj)
+        public void Delete(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("DELETE FROM Imagem WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
         }

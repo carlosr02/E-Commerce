@@ -64,6 +64,7 @@
                                 <asp:ListItem Value="2">Maiores Pre&#231;os</asp:ListItem>
                             </asp:DropDownList>
                         </div>
+                        <asp:Label ID="Label1" runat="server" Text="" Font-Size="Large" Font-Bold="False"></asp:Label>
                         <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" ItemStyle-CssClass="col-sm-4">
                             <ItemTemplate>
                                 <div class="product-image-wrapper">

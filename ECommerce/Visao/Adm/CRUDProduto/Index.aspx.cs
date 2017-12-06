@@ -33,6 +33,15 @@ namespace ECommerce.Visao.Adm.CRUDProduto
 
                 Response.Redirect("Excluir.aspx?codigo=" + codigo);
             }
+
+            if (e.CommandName == "Imagem")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                int codigo = Convert.ToInt32(GridView1.DataKeys[index].Value.ToString());
+
+                Response.Redirect("../CRUDImagem/Index.aspx?produto_id=" + codigo);
+            }
         }
     }
 }

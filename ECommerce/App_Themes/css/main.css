@@ -835,12 +835,16 @@ h2.title:before{
 
 .features_items select {
     float:right;
-    margin-bottom:5px;
+    margin-bottom:15px;
     font-size:15px;
 }
 
 .features_items table {
     float:left;
+}
+
+.features_items #ContentPlaceHolder1_Label1 {
+    margin-left:15px;
 }
 
 #order {

@@ -17,12 +17,13 @@
                             <asp:BoundField DataField="QntEmEstoque" HeaderText="Quantidade em estoque" SortExpression="QntEmEstoque"></asp:BoundField>
                             <asp:BoundField DataField="MediaAvaliacoes" HeaderText="Média das avaliações" ReadOnly="True" SortExpression="MediaAvaliacoes"></asp:BoundField>
                             <asp:BoundField DataField="Descricao" HeaderText="Descrição" SortExpression="Descricao"></asp:BoundField>
-                            <asp:CheckBoxField DataField="EmDestaque" HeaderText="EmDestaque" SortExpression="EmDestaque" Visible="False"></asp:CheckBoxField>
+                            <asp:CheckBoxField DataField="EmDestaque" HeaderText="EmDestaque" SortExpression="EmDestaque"></asp:CheckBoxField>
                             <asp:BoundField DataField="Departamento" HeaderText="Departamento" SortExpression="Departamento"></asp:BoundField>
                             <asp:BoundField DataField="Categoria_id" HeaderText="Categoria_id" ReadOnly="True" SortExpression="Categoria_id" Visible="False"></asp:BoundField>
                             <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria"></asp:BoundField>
                             <asp:ButtonField Text="Alterar" CommandName="Alterar"></asp:ButtonField>
                             <asp:ButtonField Text="Excluir" CommandName="Excluir"></asp:ButtonField>
+                            <asp:ButtonField Text="Visualizar imagens" CommandName="Imagem"></asp:ButtonField>
                         </Columns>
                     </asp:GridView>
                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALProduto"></asp:ObjectDataSource>

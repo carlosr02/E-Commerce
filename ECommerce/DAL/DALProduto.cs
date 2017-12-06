@@ -28,7 +28,7 @@ namespace ECommerce.DAL
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id";
+            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id order by p.emDestaque desc";
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)

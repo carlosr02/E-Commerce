@@ -42,8 +42,12 @@
                             <td><asp:TextBox ID="TextBox6" runat="server" TextMode="MultiLine"></asp:TextBox></td>
                         </tr>
                         <tr>
+                            <td><asp:Label ID="Label7" runat="server" Text="Em destaque"></asp:Label></td>
+                            <td><asp:CheckBox ID="CheckBox1" runat="server" /></td>
+                        </tr>
+                        <tr>
                             <td>
-                                <asp:Label ID="Label7" runat="server" Text="Departamento"></asp:Label>
+                                <asp:Label ID="Label8" runat="server" Text="Departamento"></asp:Label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="DropDownList1">*</asp:RequiredFieldValidator>
                             </td>
                             <td>
@@ -53,7 +57,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="Label8" runat="server" Text="Categoria"></asp:Label>
+                                <asp:Label ID="Label9" runat="server" Text="Categoria"></asp:Label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="DropDownList2">*</asp:RequiredFieldValidator>
                             </td>
                             <td>

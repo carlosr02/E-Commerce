@@ -23,6 +23,7 @@ namespace ECommerce.Visao.Adm.CRUDProduto
                 TextBox4.Text = Produto.Marca;
                 TextBox5.Text = Produto.QntEmEstoque.ToString();
                 TextBox6.Text = Produto.Descricao;
+                CheckBox1.Checked = Produto.EmDestaque;
                 DropDownList1.SelectedValue = Produto.Departamento_id.ToString();
                 DropDownList2.SelectedValue = Produto.Categoria_id.ToString();
             }
@@ -35,6 +36,7 @@ namespace ECommerce.Visao.Adm.CRUDProduto
             Produto.Marca = TextBox4.Text;
             Produto.QntEmEstoque = Convert.ToInt32(string.IsNullOrEmpty(TextBox5.Text) ? "0" : TextBox5.Text);
             Produto.Descricao = TextBox6.Text;
+            Produto.EmDestaque = CheckBox1.Checked;
             Produto.Categoria_id = Convert.ToInt32(DropDownList2.SelectedValue);
 
             DALProduto.Update(Produto);
