@@ -102,14 +102,23 @@
 						</tr>
 					</tbody>
 				</table>-->
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-condensed">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-condensed" DataKeyNames="Id" OnRowCommand="GridView1_RowCommand">
                     <Columns>
-                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id"></asp:BoundField>
-                        <asp:BoundField DataField="Quantidade" HeaderText="Quantidade" SortExpression="Quantidade"></asp:BoundField>
-                        <asp:BoundField DataField="Produto_id" HeaderText="Produto_id" ReadOnly="True" SortExpression="Produto_id"></asp:BoundField>
-                        <asp:BoundField DataField="Produto_nome" HeaderText="Produto_nome" ReadOnly="True" SortExpression="Produto_nome"></asp:BoundField>
-                        <asp:BoundField DataField="Produto_preco" HeaderText="Produto_preco" ReadOnly="True" SortExpression="Produto_preco"></asp:BoundField>
-                        <asp:BoundField DataField="Produto_imagem_destaque" HeaderText="Produto_imagem_destaque" ReadOnly="True" SortExpression="Produto_imagem_destaque"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_nome" HeaderText="Item" ReadOnly="True" SortExpression="Produto_nome"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_preco" HeaderText="Preço" ReadOnly="True" SortExpression="Produto_preco"></asp:BoundField>
+                        <asp:TemplateField HeaderText="Quantidade" SortExpression="Quantidade">
+                            <EditItemTemplate>
+                                <asp:TextBox runat="server" Text='<%# Bind("Quantidade") %>' ID="TextBox1"></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:TextBox runat="server" Text='<%# Bind("Quantidade") %>' ID="TextBox1" OnTextChanged="TextBox1_TextChanged" ToolTip='<%# Eval("Id") %>' TextMode="Number" AutoPostBack="True"></asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="Total" HeaderText="Total" ReadOnly="True" SortExpression="Total"></asp:BoundField>
+                        <asp:ButtonField Text="Excluir" CommandName="Excluir"></asp:ButtonField>
+                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" Visible="False"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_id" HeaderText="Produto_id" ReadOnly="True" SortExpression="Produto_id" Visible="False"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_imagem_destaque" HeaderText="Produto_imagem_destaque" ReadOnly="True" SortExpression="Produto_imagem_destaque" Visible="False"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALCarrinho">
@@ -118,78 +127,20 @@
         </div>
     </section>
     <!--/#cart_items-->
-
     <section id="do_action">
         <div class="container">
             <div class="heading">
-                <h3>What would you like to do next?</h3>
-                <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+                <h3>Finalizar compra</h3>
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="chose_area">
-                        <ul class="user_option">
-                            <li>
-                                <input type="checkbox">
-                                <label>Use Coupon Code</label>
-                            </li>
-                            <li>
-                                <input type="checkbox">
-                                <label>Use Gift Voucher</label>
-                            </li>
-                            <li>
-                                <input type="checkbox">
-                                <label>Estimate Shipping & Taxes</label>
-                            </li>
-                        </ul>
-                        <ul class="user_info">
-                            <li class="single_field">
-                                <label>Country:</label>
-                                <select>
-                                    <option>United States</option>
-                                    <option>Bangladesh</option>
-                                    <option>UK</option>
-                                    <option>India</option>
-                                    <option>Pakistan</option>
-                                    <option>Ucrane</option>
-                                    <option>Canada</option>
-                                    <option>Dubai</option>
-                                </select>
-
-                            </li>
-                            <li class="single_field">
-                                <label>Region / State:</label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>Dhaka</option>
-                                    <option>London</option>
-                                    <option>Dillih</option>
-                                    <option>Lahore</option>
-                                    <option>Alaska</option>
-                                    <option>Canada</option>
-                                    <option>Dubai</option>
-                                </select>
-
-                            </li>
-                            <li class="single_field zip-field">
-                                <label>Zip Code:</label>
-                                <input type="text">
-                            </li>
-                        </ul>
-                        <a class="btn btn-default update" href="">Get Quotes</a>
-                        <a class="btn btn-default check_out" href="">Continue</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
                     <div class="total_area">
                         <ul>
-                            <li>Cart Sub Total <span>$59</span></li>
-                            <li>Eco Tax <span>$2</span></li>
-                            <li>Shipping Cost <span>Free</span></li>
-                            <li>Total <span>$61</span></li>
+                            <li>Subtotal<span>R$<asp:Label ID="Label1" runat="server" Text=""></asp:Label></span></li>
+                            <li>Frete <span>Grátis</span></li>
+                            <li>Total <span>R$<asp:Label ID="Label2" runat="server" Text=""></asp:Label></span></li>
                         </ul>
-                        <a class="btn btn-default update" href="">Update</a>
-                        <a class="btn btn-default check_out" href="">Check Out</a>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-default check_out" PostBackUrl="~/Visao/Aut/FinalizarCompra.aspx">Finalizar</asp:LinkButton>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,8 @@ namespace ECommerce
             if (Membership.ValidateUser(login_email.Text, login_senha.Text))
             {
                 FormsAuthentication.SetAuthCookie(login_email.Text, login_checkbox.Checked);
-                Response.Redirect("Index.aspx");
+                if (Request.UrlReferrer.ToString().Contains("ReturnUrl=%2fVisao%2fAut%2fFinalizarCompra.aspx")) Response.Redirect("~/Visao/Aut/FinalizarCompra.aspx");
+                else Response.Redirect("Index.aspx");
             }
 
             else login_erro.Text = "Email ou senha inválidos";

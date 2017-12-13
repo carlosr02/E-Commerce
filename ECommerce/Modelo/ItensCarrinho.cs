@@ -20,6 +20,13 @@ namespace ECommerce.Modelo
             get { return quantidade; }
             set { quantidade = value; }
         }
+        private double total;
+
+        public double Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
         private int produto_id;
 
         public int Produto_id
@@ -45,10 +52,13 @@ namespace ECommerce.Modelo
             get { return produto_imagem_destaque; }
         }
 
-        public ItensCarrinho(Guid id, int quantidade, int produto_id, string produto_nome, double produto_preco, string produto_imagem_destaque)
+        public ItensCarrinho() { }
+
+        public ItensCarrinho(Guid id, int quantidade, double total, int produto_id, string produto_nome, double produto_preco, string produto_imagem_destaque)
         {
             this.id = id;
             this.quantidade = quantidade;
+            this.total = total;
             this.produto_id = produto_id;
             this.produto_nome = produto_nome;
             this.produto_preco = produto_preco;

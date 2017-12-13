@@ -53,10 +53,13 @@ namespace ECommerce.Visao
 
                 Produto = DALProduto.Select(id);
 
-                ItemCarrinho = new Modelo.ItensCarrinho(new Guid(), 1, Produto.Id, Produto.Nome, Produto.Preco, Produto.Imagem_destaque);
-                ItensCarrinho.Add(ItemCarrinho);
+                if (ItensCarrinho.Where(item => item.Produto_id == id).First() == null)
+                {
+                    ItemCarrinho = new Modelo.ItensCarrinho(new Guid(), 1, Produto.Preco, Produto.Id, Produto.Nome, Produto.Preco, Produto.Imagem_destaque);
+                    ItensCarrinho.Add(ItemCarrinho);
 
-                Session["carrinho"] = ItensCarrinho;
+                    Session["carrinho"] = ItensCarrinho;
+                }
             }
 
             else
@@ -65,10 +68,13 @@ namespace ECommerce.Visao
 
                 Produto = DALProduto.Select(id);
 
-                ItemCarrinho = new Modelo.ItensCarrinho(new Guid(), 1, Produto.Id, Produto.Nome, Produto.Preco, Produto.Imagem_destaque);
-                ItensCarrinho.Add(ItemCarrinho);
+                if (ItensCarrinho.Where(item => item.Produto_id == id).First() == null)
+                {
+                    ItemCarrinho = new Modelo.ItensCarrinho(new Guid(), 1, Produto.Preco, Produto.Id, Produto.Nome, Produto.Preco, Produto.Imagem_destaque);
+                    ItensCarrinho.Add(ItemCarrinho);
 
-                Session["carrinho"] = ItemCarrinho;
+                    Session["carrinho"] = ItensCarrinho;
+                }
             }
 
             Response.Redirect("~/Visao/Carrinho.aspx");

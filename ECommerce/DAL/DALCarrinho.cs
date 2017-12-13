@@ -19,6 +19,17 @@ namespace ECommerce.DAL
             return Itens;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.ItensCarrinho Select(Guid id)
+        {
+            Modelo.ItensCarrinho i = new Modelo.ItensCarrinho();
+            foreach (Modelo.ItensCarrinho item in Itens)
+            {
+                if (item.Id == id) i = item;
+            }
+            return i;
+        }
+
         public void AtribuirItens(List<Modelo.ItensCarrinho> aListItensCarrinho)
         {
             Itens = aListItensCarrinho;
