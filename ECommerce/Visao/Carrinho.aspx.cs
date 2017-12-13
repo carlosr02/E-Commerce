@@ -24,7 +24,10 @@ namespace ECommerce.Visao
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Modelo.Produto> Produtos = Session["carrinho"] as List<Modelo.Produto>;
+            DAL.DALCarrinho DALCarrinho = new DAL.DALCarrinho();
+            DALCarrinho.AtribuirItens(Session["carrinho"] as List<Modelo.ItensCarrinho>);
+
+
         }
     }
 }

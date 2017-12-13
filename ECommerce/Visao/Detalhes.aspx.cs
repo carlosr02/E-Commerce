@@ -39,28 +39,34 @@ namespace ECommerce.Visao
         {
             DAL.DALProduto DALProduto = new DAL.DALProduto();
             Modelo.Produto Produto;
-            List<Modelo.Produto> Produtos;
+
+            Modelo.ItensCarrinho ItemCarrinho;
+            List<Modelo.ItensCarrinho> ItensCarrinho;
 
             int id = Convert.ToInt32((sender as LinkButton).ToolTip);
 
             if (Session["carrinho"] == null)
             {
-                Produtos = new List<Modelo.Produto>();
+                ItensCarrinho = new List<Modelo.ItensCarrinho>();
 
                 Produto = DALProduto.Select(id);
-                Produtos.Add(Produto);
 
-                Session["carrinho"] = Produtos;
+                ItemCarrinho = new Modelo.ItensCarrinho(new Guid(), 1, Produto.Id, Produto.Nome, Produto.Preco, Produto.Imagem_destaque);
+                ItensCarrinho.Add(ItemCarrinho);
+
+                Session["carrinho"] = ItensCarrinho;
             }
 
             else
             {
-                Produtos = Session["carrinho"] as List<Modelo.Produto>;
+                ItensCarrinho = Session["carrinho"] as List<Modelo.ItensCarrinho>;
 
                 Produto = DALProduto.Select(id);
-                Produtos.Add(Produto);
 
-                Session["carrinho"] = Produtos;
+                ItemCarrinho = new Modelo.ItensCarrinho(new Guid(), 1, Produto.Id, Produto.Nome, Produto.Preco, Produto.Imagem_destaque);
+                ItensCarrinho.Add(ItemCarrinho);
+
+                Session["carrinho"] = ItemCarrinho;
             }
 
             Response.Redirect("~/Visao/Carrinho.aspx");

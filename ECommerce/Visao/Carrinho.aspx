@@ -12,7 +12,7 @@
                 </ol>
             </div>
             <div class="table-responsive cart_info">
-                <table class="table table-condensed">
+                <!--<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">Item</td>
@@ -101,54 +101,19 @@
 							</td>
 						</tr>
 					</tbody>
-				</table>
-                <!--<asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" CssClass="table table-condensed">
+				</table>-->
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-condensed">
                     <Columns>
-                        <asp:TemplateField ItemStyle-CssClass="cart_product" HeaderText="Item" HeaderStyle-CssClass="image">
-                            <ItemTemplate>
-                                <a href="">
-                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("Imagem_destaque") %>' /></a>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField ItemStyle-CssClass="cart_description" HeaderStyle-CssClass="description">
-                            <ItemTemplate>
-                                <h4>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Bind("Nome") %>'></asp:HyperLink></h4>
-                                <p>
-                                    Web ID:
-                                        <asp:Label runat="server" Text='<%# Bind("Id") %>' ID="Label1"></asp:Label>
-                                </p>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField ItemStyle-CssClass="cart_price" HeaderStyle-CssClass="price" HeaderText="Preço">
-                            <ItemTemplate>
-                                <p>
-                                    <asp:Label runat="server" Text='<%# Bind("Preco") %>' ID="Label3"></asp:Label>
-                                </p>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField ItemStyle-CssClass="cart_quantity" HeaderText="Quantidade" HeaderStyle-CssClass="quantity">
-                            <ItemTemplate>
-                                <div class="cart_quantity_button">
-                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="cart_quantity_up">+ </asp:LinkButton>
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="cart_quantity_input"></asp:TextBox>
-                                    <asp:LinkButton ID="LinkButton2" runat="server" CssClass="cart_quantity_down">- </asp:LinkButton>
-                                </div>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField ItemStyle-CssClass="cart_total" HeaderStyle-CssClass="total" HeaderText="Total">
-                            <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text="$59" CssClass="cart_total_price"></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField ItemStyle-CssClass="cart_delete">
-                            <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="cart_quantity_delete"><i class="fa fa-times"></i></asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
+                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id"></asp:BoundField>
+                        <asp:BoundField DataField="Quantidade" HeaderText="Quantidade" SortExpression="Quantidade"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_id" HeaderText="Produto_id" ReadOnly="True" SortExpression="Produto_id"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_nome" HeaderText="Produto_nome" ReadOnly="True" SortExpression="Produto_nome"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_preco" HeaderText="Produto_preco" ReadOnly="True" SortExpression="Produto_preco"></asp:BoundField>
+                        <asp:BoundField DataField="Produto_imagem_destaque" HeaderText="Produto_imagem_destaque" ReadOnly="True" SortExpression="Produto_imagem_destaque"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
-                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALProduto"></asp:ObjectDataSource>-->
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALCarrinho">
+                </asp:ObjectDataSource>
             </div>
         </div>
     </section>
