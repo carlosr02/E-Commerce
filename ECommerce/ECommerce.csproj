@@ -152,6 +152,7 @@
     <Content Include="Visao\Adm\CRUDDepartamento\Excluir.aspx" />
     <Content Include="Visao\Adm\CRUDDepartamento\Incluir.aspx" />
     <Content Include="Visao\Adm\CRUDDepartamento\Index.aspx" />
+    <Content Include="Visao\Adm\CRUDImagem\Destaque.aspx" />
     <Content Include="Visao\Adm\CRUDImagem\Incluir.aspx" />
     <Content Include="Visao\Adm\CRUDImagem\Index.aspx" />
     <Content Include="Visao\Adm\CRUDProduto\Alterar.aspx" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="Visao\Adm\CRUDDepartamento\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDImagem\Destaque.aspx.cs">
+      <DependentUpon>Destaque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visao\Adm\CRUDImagem\Destaque.aspx.designer.cs">
+      <DependentUpon>Destaque.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visao\Adm\CRUDImagem\Incluir.aspx.cs">
       <DependentUpon>Incluir.aspx</DependentUpon>

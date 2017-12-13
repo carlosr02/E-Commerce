@@ -21,6 +21,7 @@ create table Produto(
 	mediaAvaliacoes float,
 	descricao varchar(4000),
 	emDestaque bit default 0,
+	imagem_destaque varchar(2083) default '~/Imagens/produtos/destaque.png',
 	categoria_id int not null,
 	primary key(id),
 	foreign key(categoria_id) references Categoria(id)	
@@ -29,6 +30,7 @@ create table Produto(
 create table Imagem(
 	id int identity(1,1) not null,
 	url varchar(2083) not null,
+	destaque bit default 0,
 	produto_id int not null,
 	primary key(id),
 	foreign key(produto_id) references Produto(id)
@@ -82,3 +84,5 @@ create table AvaliacaoProduto(
 )
 
 
+select * from Produto
+select * from Imagem

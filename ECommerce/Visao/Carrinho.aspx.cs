@@ -24,7 +24,7 @@ namespace ECommerce.Visao
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            List<Modelo.Produto> Produtos = Session["carrinho"] as List<Modelo.Produto>;
         }
     }
 }

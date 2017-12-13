@@ -43,13 +43,6 @@
                             <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALDepartamento"></asp:ObjectDataSource>
                         </div>
                         <!--/category-products-->
-
-                        <div class="shipping text-center">
-                            <!--shipping-->
-                            <img src="../Imagens/home/shipping.jpg" alt="" />
-                        </div>
-                        <!--/shipping-->
-
                     </div>
                 </div>
 
@@ -58,7 +51,7 @@
                         <!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="../Imagens/product-details/1.jpg" alt="" />
+                                <asp:Image ID="Image1" runat="server" />
                             </div>
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -104,23 +97,20 @@
                         <div class="col-sm-7">
                             <div class="product-information">
                                 <!--/product-information-->
-                                <h2>
-                                    <asp:Label ID="LabelNome" runat="server"></asp:Label></h2>
+                                <h2><asp:Label ID="LabelNome" runat="server"></asp:Label></h2>
                                 <p>
                                     <asp:Label ID="LabelID" runat="server" Text="ID: "></asp:Label></p>
-                                <img src="../Imagens/product-details/rating.png" alt="" />
+                                <img src="../Imagens/product-details/rating.png" alt="" /><br />
                                 <span>
                                     <asp:Label ID="LabelValor" runat="server" Text="R$"></asp:Label>
-                                    <label>Quantity:</label>
-                                    <input type="text" value="3" />
-                                    <button type="button" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        Add to cart
-                                    </button>
+                                    <label>Quantidade:</label>
+                                    <asp:TextBox ID="TextBox2" runat="server" Text="1"></asp:TextBox>
                                 </span>
-                                <p><b>Availability:</b> In Stock</p>
-                                <p><b>Condition:</b> New</p>
-                                <p><b>Brand:</b>
+                                <span>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-default add-to-cart" OnClick="LinkButton1_Click" ToolTip='<%# Eval("Id") %>'><i class="fa fa-shopping-cart"></i>Adicionar ao carrinho</asp:LinkButton>
+                                </span>
+                                <p><b>Disponibilidade:</b> -</p>
+                                <p><b>Marca:</b>
                                     <asp:Label ID="LabelMarca" runat="server"></asp:Label></p>
                                 <a href="">
                                     <img src="../Imagens/product-details/share.png" class="share img-responsive" alt="" /></a>
@@ -142,156 +132,15 @@
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade" id="details">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
 
                             <div class="tab-pane fade" id="companyprofile">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
 
                             <div class="tab-pane fade" id="tag">
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="../Imagens/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
 
                             <div class="tab-pane fade active in" id="reviews">
@@ -302,20 +151,13 @@
                                         <li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
                                     </ul>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <p><b>Write Your Review</b></p>
-
-                                    <form action="#">
-                                        <span>
-                                            <input type="text" placeholder="Your Name" />
-                                            <input type="email" placeholder="Email Address" />
-                                        </span>
-                                        <textarea name=""></textarea>
-                                        <b>Rating: </b>
-                                        <img src="../Imagens/product-details/rating.png" alt="" />
-                                        <button type="button" class="btn btn-default pull-right">
-                                            Submit
-                                        </button>
-                                    </form>
+                                    <p><b>Escreva seu comentário</b></p>
+                                    <div>
+                                        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                        <b>Avaliações: </b>
+                                        <asp:Label ID="Label1" runat="server" Text="-"></asp:Label>
+                                        <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="btn btn-default pull-right" />
+                                    </div>
                                 </div>
                             </div>
 

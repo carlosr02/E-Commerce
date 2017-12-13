@@ -61,6 +61,13 @@ namespace ECommerce.Modelo
             get { return emDestaque; }
             set { emDestaque = value; }
         }
+        private string imagem_destaque;
+
+        public string Imagem_destaque
+        {
+            get { return imagem_destaque; }
+            set { imagem_destaque = value; }
+        }
         private int departamento_id;
 
         public int Departamento_id
@@ -88,7 +95,7 @@ namespace ECommerce.Modelo
             get { return categoria; }
         }
 
-        public Produto(int id, string nome, double preco, string marca, Nullable<int> qntEmEstoque, Nullable<double> mediaAvaliacoes, string descricao, bool emDestaque, int categoria_id)
+        public Produto(int id, string nome, double preco, string marca, Nullable<int> qntEmEstoque, Nullable<double> mediaAvaliacoes, string descricao, bool emDestaque, string imagem_destaque, int categoria_id)
         {
             this.id = id;
             this.nome = nome;
@@ -98,6 +105,7 @@ namespace ECommerce.Modelo
             this.mediaAvaliacoes = mediaAvaliacoes;
             this.descricao = descricao;
             this.emDestaque = emDestaque;
+            this.imagem_destaque = imagem_destaque;
             this.categoria_id = categoria_id;
         }
 
@@ -111,6 +119,23 @@ namespace ECommerce.Modelo
             this.mediaAvaliacoes = mediaAvaliacoes;
             this.descricao = descricao;
             this.emDestaque = emDestaque;
+            this.departamento_id = departamento_id;
+            this.departamento = departamento;
+            this.categoria_id = categoria_id;
+            this.categoria = categoria;
+        }
+
+        public Produto(int id, string nome, double preco, string marca, Nullable<int> qntEmEstoque, Nullable<double> mediaAvaliacoes, string descricao, bool emDestaque, string imagem_destaque, int departamento_id, string departamento, int categoria_id, string categoria)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.preco = preco;
+            this.marca = marca;
+            this.qntEmEstoque = qntEmEstoque;
+            this.mediaAvaliacoes = mediaAvaliacoes;
+            this.descricao = descricao;
+            this.emDestaque = emDestaque;
+            this.imagem_destaque = imagem_destaque;
             this.departamento_id = departamento_id;
             this.departamento = departamento;
             this.categoria_id = categoria_id;

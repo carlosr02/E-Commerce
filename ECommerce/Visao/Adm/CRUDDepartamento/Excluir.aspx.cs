@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,8 +22,18 @@ namespace ECommerce.Visao.Adm.CRUDDepartamento
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DALDepartamento.Delete(Convert.ToInt32(Request["codigo"]));
-            Response.Redirect("Index.aspx");
+            try
+            {
+                DALDepartamento.Delete(Convert.ToInt32(Request["codigo"]));
+                Response.Redirect("Index.aspx");
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                {
+                    Label5.Text = "Esse departamento contém categorias relacionadas. Delete-as para poder excluí-lo";
+                }
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

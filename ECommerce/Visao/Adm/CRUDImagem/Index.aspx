@@ -7,17 +7,17 @@
         <div class="bg">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>
-                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label></h2>
-                    <asp:Button ID="Button1" runat="server" Text="Incluir" OnClick="Button1_Click" /><br />
+                    <h2>Imagens</h2>
+                    <asp:Button ID="Button1" runat="server" Text="Incluir" OnClick="Button1_Click" />
+                    <asp:Button ID="Button3" runat="server" Text="Selecionar destaque" OnClick="Button3_Click" Visible="False" /><br />
                     <br />
                     <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1">
                         <ItemTemplate>
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# "../../../Imagens/produtos/" + Eval("Url") %>' Width="205" Height="190" /><br />
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# "../../../Imagens/produtos/" + Eval("Url") %>' Width="205" Height="190" />
                             <asp:Button ID="Button2" runat="server" Text="Excluir" OnClick="Button2_Click" OnClientClick="javascript:return ConfirmaExclusao();" ToolTip='<%# Eval("Id") %>' />
-                            <br />
                         </ItemTemplate>
                     </asp:DataList>
+                    <br />
                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAllByProduct" TypeName="ECommerce.DAL.DALImagem">
                         <SelectParameters>
                             <asp:QueryStringParameter QueryStringField="produto_id" Name="produto_id" Type="Int32"></asp:QueryStringParameter>
@@ -33,5 +33,4 @@
             return confirm('Deseja realmente excluir este registro?');
         }
     </script>
-
 </asp:Content>

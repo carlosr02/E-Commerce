@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,8 +23,18 @@ namespace ECommerce.Visao.Adm.CRUDCategoria
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DALCategoria.Delete(Convert.ToInt32(Request["codigo"]));
-            Response.Redirect("Index.aspx");
+            try
+            {
+                DALCategoria.Delete(Convert.ToInt32(Request["codigo"]));
+                Response.Redirect("Index.aspx");
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                {
+                    Label7.Text = "Essa categoria contém produtos relacionados. Delete-os para poder excluí-la";
+                }
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

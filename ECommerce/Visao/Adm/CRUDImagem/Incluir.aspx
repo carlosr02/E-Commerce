@@ -6,8 +6,8 @@
         <div class="bg">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2><asp:Label ID="Label1" runat="server" Text=""></asp:Label></h2>
-                    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                    <h2>Inclusão de Imagem</h2>
+                    <asp:Label ID="Label1" runat="server" Text="" ForeColor="Red"></asp:Label>
                     <input ID="FileUpload1" type="file" name="file" onchange="previewFile()"  runat="server" />
                     <br />
                     <asp:Image ID="Image1" runat="server" Width="205" Height="190" />

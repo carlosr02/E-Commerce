@@ -10,6 +10,9 @@ namespace ECommerce.Visao
 {
     public partial class shop : System.Web.UI.Page
     {
+        DAL.DALProduto DALProduto = new DAL.DALProduto();
+        Modelo.Produto Produto;
+
         protected void Page_PreInit(object sender, EventArgs e)
         {
             MembershipUser user;
@@ -32,6 +35,37 @@ namespace ECommerce.Visao
             if (DropDownList1.SelectedValue == "0") { ObjectDataSource1.SelectMethod = "SelectBySearch"; }
             else if (DropDownList1.SelectedValue == "1") { ObjectDataSource1.SelectMethod = "SelectBySearchOrdered"; }
             else if (DropDownList1.SelectedValue == "2") { ObjectDataSource1.SelectMethod = "SelectBySearchOrderedDesc"; }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            DAL.DALProduto DALProduto = new DAL.DALProduto();
+            Modelo.Produto Produto;
+            List<Modelo.Produto> Produtos;
+
+            int id = Convert.ToInt32((sender as LinkButton).ToolTip);
+
+            if (Session["carrinho"] == null)
+            {
+                Produtos = new List<Modelo.Produto>();
+
+                Produto = DALProduto.Select(id);
+                Produtos.Add(Produto);
+
+                Session["carrinho"] = Produtos;
+            }
+
+            else
+            {
+                Produtos = Session["carrinho"] as List<Modelo.Produto>;
+
+                Produto = DALProduto.Select(id);
+                Produtos.Add(Produto);
+
+                Session["carrinho"] = Produtos;
+            }
+
+            Response.Redirect("~/Visao/Carrinho.aspx");
         }
     }
 }

@@ -31,7 +31,6 @@ namespace ECommerce.Visao.Adm.CRUDImagem
                     Imagem = new Modelo.Imagem(0,
                         Request.QueryString["produto_id"] + "/" + codigo + extensao, 
                         Convert.ToInt32(Request.QueryString["produto_id"]));
-
                     DALImagem.Insert(Imagem);
                     
                     string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
@@ -43,7 +42,7 @@ namespace ECommerce.Visao.Adm.CRUDImagem
 
             catch (Exception ex) 
             {
-                Label2.Text = "A imagem deve ter formato .jpeg, .jpg, .png ou .gif";
+                Label1.Text = "A imagem deve ter formato .jpeg, .jpg, .png ou .gif";
             }
         }
 

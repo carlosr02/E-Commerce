@@ -43,13 +43,6 @@
                             <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALDepartamento"></asp:ObjectDataSource>
                         </div>
                         <!--/category-products-->
-
-                        <div class="shipping text-center">
-                            <!--shipping-->
-                            <img src="../Imagens/home/shipping.jpg" alt="" />
-                        </div>
-                        <!--/shipping-->
-
                     </div>
                 </div>
 
@@ -71,12 +64,12 @@
                                     <div class="single-products">
                                         <a href="Detalhes.aspx?id=<%# Eval("Id") %>">
                                             <div class="productinfo text-center">
-                                                <img src="../Imagens/home/product1.jpg" alt="" />
+                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Imagem_destaque") %>' />
                                                 <h2>R$<asp:Label Text='<%# Eval("Preco") %>' runat="server" ID="PrecoLabel" /></h2>
                                                 <p>
                                                     <asp:Label Text='<%# Eval("Nome") %>' runat="server" ID="NomeLabel" />
                                                 </p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar ao carrinho</a>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-default add-to-cart" OnClick="LinkButton1_Click" ToolTip='<%# Eval("Id") %>'><i class="fa fa-shopping-cart"></i>Adicionar ao carrinho</asp:LinkButton>
                                             </div>
                                         </a>
                                     </div>

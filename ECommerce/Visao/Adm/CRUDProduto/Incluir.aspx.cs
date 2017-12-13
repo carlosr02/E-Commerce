@@ -31,7 +31,7 @@ namespace ECommerce.Visao.Adm.CRUDProduto
                 string descricao = TextBox5.Text;
                 int categoria_id = Convert.ToInt32(DropDownList2.SelectedValue);
 
-                Produto = new Modelo.Produto(0, nome, preco, marca, qntEmEstoque, null, descricao, false, categoria_id);
+                Produto = new Modelo.Produto(0, nome, preco, marca, qntEmEstoque, null, descricao, false, "", categoria_id);
 
                 DALProduto.Insert(Produto);
 

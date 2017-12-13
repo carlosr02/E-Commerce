@@ -28,7 +28,7 @@ namespace ECommerce.DAL
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id order by p.emDestaque desc";
+            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, p.imagem_destaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id order by p.emDestaque desc";
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -44,10 +44,10 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8]),
-                        dr[9] as string,
-                        Convert.ToInt32(dr[10]),
-                        dr[11] as string
+                        Convert.ToInt32(dr[9]),
+                        dr[10] as string,
+                        Convert.ToInt32(dr[11]),
+                        dr[12] as string
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -84,7 +84,8 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        dr[8] as string,
+                        Convert.ToInt32(dr[9])
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -121,7 +122,8 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        dr[8] as string,
+                        Convert.ToInt32(dr[9])
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -158,7 +160,8 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        dr[8] as string,
+                        Convert.ToInt32(dr[9])
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -194,7 +197,8 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        dr[8] as string,
+                        Convert.ToInt32(dr[9])
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -231,7 +235,8 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8])
+                        dr[8] as string,
+                        Convert.ToInt32(dr[9])
                         );
                     aListProduto.Add(aProduto);
                 }
@@ -279,7 +284,7 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id where p.id = @id";
+            cmd.CommandText = "select p.id, p.nome, p.preco, p.marca, p.qntEmEstoque, p.mediaAvaliacoes, p.descricao, p.emDestaque, p.imagem_destaque, dep.id, dep.descricao, p.categoria_id, cat.descricao from Produto p inner join Categoria cat on cat.id = p.categoria_id inner join Departamento dep on dep.id = cat.departamento_id where p.id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -294,10 +299,11 @@ namespace ECommerce.DAL
                         dr[5] as Nullable<double>,
                         dr[6] as string,
                         Convert.ToBoolean(dr[7]),
-                        Convert.ToInt32(dr[8]),
-                        dr[9] as string,
-                        Convert.ToInt32(dr[10]),
-                        dr[11] as string
+                        dr[8] as string,
+                        Convert.ToInt32(dr[9]),
+                        dr[10] as string,
+                        Convert.ToInt32(dr[11]),
+                        dr[12] as string
                         );
 
             dr.Close();
@@ -341,7 +347,7 @@ namespace ECommerce.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque, categoria_id = @categoria_id WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Produto SET nome = @nome, preco = @preco, marca = @marca, qntEmEstoque = @qntEmEstoque, descricao = @descricao, emDestaque = @emDestaque, imagem_destaque = @imagem_destaque, categoria_id = @categoria_id WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.Parameters.AddWithValue("@nome", obj.Nome);
             cmd.Parameters.AddWithValue("@preco", obj.Preco);
@@ -349,6 +355,7 @@ namespace ECommerce.DAL
             cmd.Parameters.AddWithValue("@qntEmEstoque", obj.QntEmEstoque);
             cmd.Parameters.AddWithValue("@descricao", obj.Descricao);
             cmd.Parameters.AddWithValue("@emDestaque", obj.EmDestaque);
+            cmd.Parameters.AddWithValue("@imagem_destaque", obj.Imagem_destaque);
             cmd.Parameters.AddWithValue("@categoria_id", obj.Categoria_id);
 
             cmd.ExecuteNonQuery();

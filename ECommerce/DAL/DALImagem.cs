@@ -23,14 +23,14 @@ namespace ECommerce.DAL
         {
             Modelo.Imagem aImagem;
             List<Modelo.Imagem> aListImagem = new List<Modelo.Imagem>();
-            
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from Imagem where produto_id = @produto_id";
             cmd.Parameters.AddWithValue("@produto_id", produto_id);
-            
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -73,6 +73,34 @@ namespace ECommerce.DAL
             return aImagem;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Imagem SelectDestaque()
+        {
+            Modelo.Imagem aImagem;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Imagem where destaque = 1";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                aImagem = new Modelo.Imagem(
+                        Convert.ToInt32(dr[0]),
+                        dr[1] as string,
+                        Convert.ToBoolean(dr[2]),
+                        Convert.ToInt32(dr[3])
+                        );
+            }
+            else aImagem = null;
+            dr.Close();
+            conn.Close();
+
+            return aImagem;
+        }
+
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(int id)
         {
@@ -94,6 +122,19 @@ namespace ECommerce.DAL
             SqlCommand cmd = new SqlCommand("INSERT INTO Imagem (url, produto_id) VALUES (@url, @produto_id)", conn);
             cmd.Parameters.AddWithValue("@url", obj.Url);
             cmd.Parameters.AddWithValue("@produto_id", obj.Produto_id);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Imagem obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Imagem SET destaque = @destaque WHERE id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@destaque", obj.Destaque);
 
             cmd.ExecuteNonQuery();
         }

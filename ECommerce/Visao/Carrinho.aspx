@@ -13,98 +13,142 @@
             </div>
             <div class="table-responsive cart_info">
                 <table class="table table-condensed">
-                    <thead>
-                        <tr class="cart_menu">
-                            <td class="image">Item</td>
-                            <td class="description"></td>
-                            <td class="price">Price</td>
-                            <td class="quantity">Quantity</td>
-                            <td class="total">Total</td>
-                            <td></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="cart_product">
-                                <a href="">
-                                    <img src="../Imagens/cart/one.png" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Colorblock Scuba</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>$59</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href="">+ </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href="">- </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">$59</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="../Imagens/cart/one.png" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Colorblock Scuba</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_price">
+								<p>$59</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">$59</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
 
-                        <tr>
-                            <td class="cart_product">
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="../Imagens/cart/two.png" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Colorblock Scuba</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_price">
+								<p>$59</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">$59</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="../Imagens/cart/three.png" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Colorblock Scuba</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_price">
+								<p>$59</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">$59</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+                <!--<asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" CssClass="table table-condensed">
+                    <Columns>
+                        <asp:TemplateField ItemStyle-CssClass="cart_product" HeaderText="Item" HeaderStyle-CssClass="image">
+                            <ItemTemplate>
                                 <a href="">
-                                    <img src="../Imagens/cart/two.png" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Colorblock Scuba</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>$59</p>
-                            </td>
-                            <td class="cart_quantity">
+                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("Imagem_destaque") %>' /></a>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ItemStyle-CssClass="cart_description" HeaderStyle-CssClass="description">
+                            <ItemTemplate>
+                                <h4>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Bind("Nome") %>'></asp:HyperLink></h4>
+                                <p>
+                                    Web ID:
+                                        <asp:Label runat="server" Text='<%# Bind("Id") %>' ID="Label1"></asp:Label>
+                                </p>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ItemStyle-CssClass="cart_price" HeaderStyle-CssClass="price" HeaderText="Preço">
+                            <ItemTemplate>
+                                <p>
+                                    <asp:Label runat="server" Text='<%# Bind("Preco") %>' ID="Label3"></asp:Label>
+                                </p>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ItemStyle-CssClass="cart_quantity" HeaderText="Quantidade" HeaderStyle-CssClass="quantity">
+                            <ItemTemplate>
                                 <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href="">+ </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href="">- </a>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="cart_quantity_up">+ </asp:LinkButton>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="cart_quantity_input"></asp:TextBox>
+                                    <asp:LinkButton ID="LinkButton2" runat="server" CssClass="cart_quantity_down">- </asp:LinkButton>
                                 </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">$59</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart_product">
-                                <a href="">
-                                    <img src="../Imagens/cart/three.png" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Colorblock Scuba</a></h4>
-                                <p>Web ID: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>$59</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href="">+ </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href="">- </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">$59</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ItemStyle-CssClass="cart_total" HeaderStyle-CssClass="total" HeaderText="Total">
+                            <ItemTemplate>
+                                <asp:Label ID="Label4" runat="server" Text="$59" CssClass="cart_total_price"></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ItemStyle-CssClass="cart_delete">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="cart_quantity_delete"><i class="fa fa-times"></i></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ECommerce.DAL.DALProduto"></asp:ObjectDataSource>-->
             </div>
         </div>
     </section>

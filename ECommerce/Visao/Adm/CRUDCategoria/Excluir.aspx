@@ -7,6 +7,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Exclusão de Categoria</h2>
+                    <asp:Label ID="Label7" runat="server" Text="" ForeColor="Red"></asp:Label>
                     <table>
                         <tr>
                             <td><asp:Label ID="Label1" runat="server" Text="Código:"></asp:Label></td>
