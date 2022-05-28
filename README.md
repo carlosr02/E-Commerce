@@ -1,5 +1,5 @@
 # E-Commerce (Loja de departamentos)
-Carlos Romero Bacurau de Brito (carlosr02), 20141011110255
+Carlos Romero (carlosr02), 20141011110255
 
 <h3>TODO</h3>
 
